@@ -1,2 +1,2 @@
-# ToyRepo
-ToyRepo for I2HDS 
+# I2HDS
+Repo holding work/resources related to anything health data science related. 
