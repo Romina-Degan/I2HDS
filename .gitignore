@@ -1,0 +1,13 @@
+Answers to the 2nd practical
+
+1: 9.699999809265137 
+2: 5.935000044107437
+3: SELECT postcode, COUNT(chi) FROM demographic GROUP BY postcode;
+4: SELECT demographic.first_name,demographic.last_name,demographic.dob,demographic.chi,demographic.postcode, simd.decile FROM demographic, simd WHERE demographic.postcode=simd.postcode;
+5: SELECT simd.decile, COUNT(demographic.first_name) FROM demographic, simd GROUP BY simd.decile;
+6: SELECT demographic.first_name, demographic.last_name, demographic.chi 
+FROM demographic 
+INNER JOIN infection_test_results ON demographic.chi = infection_test_results.chi
+WHERE infection_test_results.result='positive';
+
+7:
