@@ -10,4 +10,14 @@ FROM demographic
 INNER JOIN infection_test_results ON demographic.chi = infection_test_results.chi
 WHERE infection_test_results.result='positive';
 
-7:
+7:SELECT demographic.first_name, demographic.last_name, biochem_test_results.test, biochem_test_results.result
+FROM demographic
+INNER JOIN biochem_test_results ON demographic.chi = biochem_test_results.chi
+GROUP BY demographic.first_name, demographic.last_name, biochem_test_results.test, biochem_test_results.result; 
+#Important to note that for question 7 it had to use all the values we selected in the select statement since there is no individiual unique field we could have grouped by so we had to use all of it 
+
+8: SELECT infection_test_results.chi, COUNT(biochem_test_results.chi) 
+FROM biochem_test_results 
+INNER JOIN infection_test_results ON biochem_test_results.chi= infection_test_results.chi
+WHERE infection_test_results.chi=biochem_test_results.chi
+GROUP BY infection_test_results.chi;
