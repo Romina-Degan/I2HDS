@@ -1,0 +1,6 @@
+library(here)
+library(readr)
+library(readxl)
+library(readtext)
+fev_data <- read_csv(here("fev.csv"))
+psaData <- read.table("psa.txt", header = TRUE, sep = "\t")
