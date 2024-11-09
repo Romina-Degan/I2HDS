@@ -1,0 +1,40 @@
+--- 
+title: "Title Placeholder"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Load in Specific Packages
+```{r}
+library(readr)
+library(tidyr)
+library(dplyr)
+library(here)
+library(lemon)
+library(kableExtra)
+library(ggplot2)
+library(reshape())
+```
+
+### Load in the data 
+```{r}
+cancerReg <- read.csv("C:\\Users\\romin\\ToyRepo\\Models\\cancerReg.csv") 
+```
+
+
+### Remove Uncessary Data for Analysis
+```{r}
+cancerReg <- cancerReg %>% select(-area_type,-period,-type_definition,-indicator, -upper_confidence_interval, -lower_confidence_interval)
+cancerReg
+```
+
+### Display Data as Bubble Plot
+ ```{r}
+
+ 
+``` 
+<!-- # head(cancerReg)
+# ggplot(cancerReg, aes(x=year, y=area_name, size=measure))+ geom_point(alpha=0.5) + scale_size(range=c(1,10), name="Patients per 100,000") -->
