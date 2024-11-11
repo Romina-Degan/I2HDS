@@ -17,6 +17,9 @@ library(lemon)
 library(kableExtra)
 library(ggplot2)
 library(reshape())
+library(hexbin)
+library(data.table)
+library(formattable)
 ```
 
 ### Load in the data 
@@ -31,10 +34,32 @@ cancerReg <- cancerReg %>% select(-area_type,-period,-type_definition,-indicator
 cancerReg
 ```
 
-### Display Data as Bubble Plot
- ```{r}
+### Display Summary of All Data
+```{r}
 
- 
+ggplot(cancerReg,aes(x=year, y= numerator, col=area_name)) + geom_line() + geom_point()
 ``` 
-<!-- # head(cancerReg)
-# ggplot(cancerReg, aes(x=year, y=area_name, size=measure))+ geom_point(alpha=0.5) + scale_size(range=c(1,10), name="Patients per 100,000") -->
+
+### Summary Table of Data Within Graph 
+```{r}
+customGreen0 = "#DeF7E9"
+
+customGreen = "#71CA97"
+
+customRed = "#ff7f7f"
+
+healthBoard <- cancerReg %>%
+    filter(area_name %in% c(
+        "NHS Ayrshire & Arran", "NHS Borders", "NHS Dumfries & Galloway",
+        "NHS Forth Valley", "NHS Grampian", "NHS Highland",
+        "NHS Lothian", "NHS Orkney", "NHS Shetland",
+        "NHS Western Isles"
+    )) %>%
+    filter(year %in% 2003:2021)
+
+
+healthBoard
+
+
+
+``` 
