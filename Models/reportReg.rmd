@@ -30,14 +30,14 @@ cancerReg <- read.csv("C:\\Users\\romin\\ToyRepo\\Models\\cancerReg.csv")
 
 ### Remove Uncessary Data for Analysis
 ```{r}
-cancerReg <- cancerReg %>% select(-area_type,-period,-type_definition,-indicator, -upper_confidence_interval, -lower_confidence_interval)
+cancerReg <- cancerReg %>% select(-area_type,-period,-type_definition,-indicator, -upper_confidence_interval, -lower_confidence_interval, -numerator)
 cancerReg
 ```
 
 ### Display Summary of All Data
 ```{r}
 
-ggplot(cancerReg,aes(x=year, y= numerator, col=area_name)) + geom_line() + geom_point()
+ggplot(cancerReg,aes(x=year, y= measure, col=area_name)) + geom_line() + geom_point()
 ``` 
 
 ### Summary Table of Data Within Graph 
@@ -48,18 +48,12 @@ customGreen = "#71CA97"
 
 customRed = "#ff7f7f"
 
-healthBoard <- cancerReg %>%
-    filter(area_name %in% c(
-        "NHS Ayrshire & Arran", "NHS Borders", "NHS Dumfries & Galloway",
-        "NHS Forth Valley", "NHS Grampian", "NHS Highland",
-        "NHS Lothian", "NHS Orkney", "NHS Shetland",
-        "NHS Western Isles"
-    )) %>%
-    filter(year %in% 2003:2021)
-
-
-healthBoard
-
-
-
+healthBoardData <- reshape(cancerReg, idvar = "area_name", timevar = "year", v.names = "measure", direction = "wide")
+colnames(healthBoardData)
+healthBoardData <- healthBoardData %>%
+    mutate(
+        Average = round(rowMeans(select(., starts_with("measure.")), na.rm = TRUE), 2),
+    )
+#Calculate the difference in all the values from 2003- 2021
+healthBoardData
 ``` 
