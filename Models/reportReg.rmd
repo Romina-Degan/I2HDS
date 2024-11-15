@@ -19,7 +19,9 @@ library(ggplot2)
 library(reshape())
 library(hexbin)
 library(data.table)
+library(GGally)
 library(formattable)
+library(viridis)
 ```
 
 ### Load in the data 
@@ -30,14 +32,23 @@ cancerReg <- read.csv("C:\\Users\\romin\\ToyRepo\\Models\\cancerReg.csv")
 
 ### Remove Uncessary Data for Analysis
 ```{r}
-cancerReg <- cancerReg %>% select(-area_type,-period,-type_definition,-indicator, -upper_confidence_interval, -lower_confidence_interval, -numerator)
+cancerReg <- cancerReg %>% select(-area_type,-type_definition,-indicator, -upper_confidence_interval, -lower_confidence_interval, -numerator)
 cancerReg
+```
+
+```{r}
+
 ```
 
 ### Display Summary of All Data
 ```{r}
 
-ggplot(cancerReg,aes(x=year, y= measure, col=area_name)) + geom_line() + geom_point()
+# ggplot(cancerReg,aes(x=year, y= measure, col=area_name)) + geom_line() + geom_point()
+# ggplot(cancerReg, aes(x=area_name, y=measure, fill=area_name)) + geom_violin()
+# ggparcoord(data= cancerReg, columns = c(), groupColumn = "area_name")
+# ggplot(cancerReg, aes(fill=year, y=measure, x=area_name)) + geom_bar(position = "stack", stat = "identity")
+ggplot(cancerReg, aes(x = year, y = measure, fill = area_name)) +  geom_area(alpha=0.6 , size=.5, colour="white") +
+    scale_fill_viridis(discrete = T) 
 ``` 
 
 ### Summary Table of Data Within Graph 
