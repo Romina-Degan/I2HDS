@@ -32,7 +32,7 @@ cancerReg <- read.csv("C:\\Users\\romin\\ToyRepo\\Models\\cancerReg.csv")
 
 ### Remove Uncessary Data for Analysis
 ```{r}
-cancerReg <- cancerReg %>% select(-area_type,-type_definition,-indicator, -upper_confidence_interval, -lower_confidence_interval, -numerator)
+cancerReg <- cancerReg %>% select(-period,-area_type,-type_definition,-indicator, -upper_confidence_interval, -lower_confidence_interval, -numerator)
 cancerReg
 ```
 
@@ -58,13 +58,24 @@ customGreen0 = "#DeF7E9"
 customGreen = "#71CA97"
 
 customRed = "#ff7f7f"
+# colnames(healthBoardData)
+# healthBoardData <- healthBoardData %>%
+#     mutate(
+#         Average = round(rowMeans(select(., starts_with("measure.")), na.rm = TRUE), 2),
 
-healthBoardData <- reshape(cancerReg, idvar = "area_name", timevar = "year", v.names = "measure", direction = "wide")
-colnames(healthBoardData)
-healthBoardData <- healthBoardData %>%
-    mutate(
-        Average = round(rowMeans(select(., starts_with("measure.")), na.rm = TRUE), 2),
-    )
-#Calculate the difference in all the values from 2003- 2021
-healthBoardData
+#     )
+### This one works for creating some weird random diff
+# healthBoardData <- reshape(cancerReg, idvar = "area_name", timevar = "year", v.names = "measure", direction = "wide")
+
+# healthBoardData <- cancerReg %>%
+#     arrange(area_name, year) %>%
+#     group_by(area_name) %>%
+#     mutate(measure_diff = c(NA, diff(measure)))
+# healthBoardData
+
+
+healthBoardData <- cancerReg %>% pivot_wider(names_from = year, values_from = measure)
+healthBoardData <- healthBoardData %>%  mutate(Average = rowMeans(select(., `2003`:`2020`), na.rm = TRUE)) 
+print(healthBoardData$Average)
+
 ``` 
