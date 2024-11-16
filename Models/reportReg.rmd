@@ -75,7 +75,10 @@ customRed = "#ff7f7f"
 
 
 healthBoardData <- cancerReg %>% pivot_wider(names_from = year, values_from = measure)
-healthBoardData <- healthBoardData %>%  mutate(Average = rowMeans(select(., `2003`:`2020`), na.rm = TRUE)) 
-print(healthBoardData$Average)
-
+healthBoardData <- healthBoardData %>%
+    mutate(
+        Average = rowMeans(select(., `2003`:`2020`), na.rm = TRUE),
+        Difference = across(`2003`:`2020`, ~ . - lag(.))
+    )
+head(healthBoardData)
 ``` 
