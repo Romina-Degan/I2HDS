@@ -33,7 +33,6 @@ cancerReg <- read.csv("C:\\Users\\romin\\ToyRepo\\Models\\cancerReg.csv")
 ### Remove Uncessary Data for Analysis
 ```{r}
 cancerReg <- cancerReg %>% select(-period,-area_type,-type_definition,-indicator, -upper_confidence_interval, -lower_confidence_interval, -numerator)
-cancerReg
 ```
 
 
@@ -96,7 +95,7 @@ healthBoardData <- healthBoardData %>%
     mutate(
         Average = rowMeans(select(., `2003`:`2020`), na.rm = TRUE)
     )
-
+formattable(healthBoardData)
 healthBoardData
 ``` 
 #Note for next time: what I want to do at this point is to show the changing colours as a difference change if its only within a small amount of chaning values then ignore the calues and do not 
