@@ -36,9 +36,6 @@ cancerReg <- cancerReg %>% select(-period,-area_type,-type_definition,-indicator
 cancerReg
 ```
 
-```{r}
-
-```
 
 ### Display Summary of All Data
 ```{r}
@@ -50,6 +47,24 @@ cancerReg
 ggplot(cancerReg, aes(x = year, y = measure, fill = area_name)) +  geom_area(alpha=0.6 , size=.5, colour="white") +
     scale_fill_viridis(discrete = T) 
 ``` 
+
+```{r}
+colorRampPalette(c(rgb(1,0,0,0), rgb(0,0,1,0)), alpha = TRUE)(8)
+
+diffOverYears <- function(year1, year2){
+    result = year1 - year2
+    if (result >=0 & result<=50){
+        result = "white"
+        intensity <- max(0, min(255, -value * 51))
+        rgb(colorRampPalette(intensity) / 255, maxColorValue = 255)
+
+    }else if (result<0){
+
+    }
+        
+    }
+```
+
 
 ### Summary Table of Data Within Graph 
 ```{r}
@@ -72,13 +87,17 @@ customRed = "#ff7f7f"
 #     group_by(area_name) %>%
 #     mutate(measure_diff = c(NA, diff(measure)))
 # healthBoardData
-
-
+# Difference = across(`2003`:`2020`, ~ . - lag(.))
+healthBoardData <- cancerReg %>%
+    group_by(year) %>%
+    mutate(Percent = measure / sum(measure) * 100)
 healthBoardData <- cancerReg %>% pivot_wider(names_from = year, values_from = measure)
 healthBoardData <- healthBoardData %>%
     mutate(
-        Average = rowMeans(select(., `2003`:`2020`), na.rm = TRUE),
-        Difference = across(`2003`:`2020`, ~ . - lag(.))
+        Average = rowMeans(select(., `2003`:`2020`), na.rm = TRUE)
     )
-head(healthBoardData)
+
+healthBoardData
 ``` 
+#Note for next time: what I want to do at this point is to show the changing colours as a difference change if its only within a small amount of chaning values then ignore the calues and do not 
+#colour the cell, otherwise red fir a rise and green for a fall 
