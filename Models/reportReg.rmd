@@ -48,45 +48,18 @@ ggplot(cancerReg, aes(x = year, y = measure, fill = area_name)) +  geom_area(alp
 ``` 
 
 ```{r}
-colorRampPalette(c(rgb(1,0,0,0), rgb(0,0,1,0)), alpha = TRUE)(8)
-
-diffOverYears <- function(year1, year2){
-    result = year1 - year2
-    if (result >=0 & result<=50){
-        result = "white"
-        intensity <- max(0, min(255, -value * 51))
-        rgb(colorRampPalette(intensity) / 255, maxColorValue = 255)
-
-    }else if (result<0){
-
+colourCells <- function(values, average){
+    diffVal <- values - average
+    if (diffVal>=0 & diffVal<=20){
+        return(paste0("\\cellcolor{green!," ,round(diffVal/100), "}"))
     }
-        
-    }
+}
 ```
+
 
 
 ### Summary Table of Data Within Graph 
 ```{r}
-customGreen0 = "#DeF7E9"
-
-customGreen = "#71CA97"
-
-customRed = "#ff7f7f"
-# colnames(healthBoardData)
-# healthBoardData <- healthBoardData %>%
-#     mutate(
-#         Average = round(rowMeans(select(., starts_with("measure.")), na.rm = TRUE), 2),
-
-#     )
-### This one works for creating some weird random diff
-# healthBoardData <- reshape(cancerReg, idvar = "area_name", timevar = "year", v.names = "measure", direction = "wide")
-
-# healthBoardData <- cancerReg %>%
-#     arrange(area_name, year) %>%
-#     group_by(area_name) %>%
-#     mutate(measure_diff = c(NA, diff(measure)))
-# healthBoardData
-# Difference = across(`2003`:`2020`, ~ . - lag(.))
 healthBoardData <- cancerReg %>%
     group_by(year) %>%
     mutate(Percent = measure / sum(measure) * 100)
@@ -95,8 +68,10 @@ healthBoardData <- healthBoardData %>%
     mutate(
         Average = rowMeans(select(., `2003`:`2020`), na.rm = TRUE)
     )
-formattable(healthBoardData)
-healthBoardData
+healthBoardData <- healthBoardData %>% mutate(across (`2003`: `2020`, ~ paste0(colourCells(.x, Average), .x)  ))
+kable(healthBoardData, format = "latex", booktabs = TRUE)
 ``` 
+
+
 #Note for next time: what I want to do at this point is to show the changing colours as a difference change if its only within a small amount of chaning values then ignore the calues and do not 
 #colour the cell, otherwise red fir a rise and green for a fall 
