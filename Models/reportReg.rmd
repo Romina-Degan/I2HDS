@@ -22,6 +22,8 @@ library(data.table)
 library(GGally)
 library(formattable)
 library(viridis)
+library(TTR)
+library(zoo)
 ```
 
 ### Load in the data 
@@ -43,8 +45,19 @@ cancerReg <- cancerReg %>% select(-period,-area_type,-type_definition,-indicator
 # ggplot(cancerReg, aes(x=area_name, y=measure, fill=area_name)) + geom_violin()
 # ggparcoord(data= cancerReg, columns = c(), groupColumn = "area_name")
 # ggplot(cancerReg, aes(fill=year, y=measure, x=area_name)) + geom_bar(position = "stack", stat = "identity")
-ggplot(cancerReg, aes(x = year, y = measure, fill = area_name)) +  geom_area(alpha=0.6 , size=.5, colour="white") +
-    scale_fill_viridis(discrete = T) 
+# ggplot(cancerReg, aes(x = year, y = measure, fill = area_name)) +  geom_area(alpha=0.6 , size=.5, colour="white") +
+#     scale_fill_viridis(discrete = T)
+# ggplot(cancerReg, aes(x = year, y = measure, col = area_name)) +
+#     geom_point(size = 3, position = position_jitter(h = 0.50, w = 0.50), alpha = 0.5) +
+#     geom_smooth(se=FALSE, size = 0.7 )
+
+cancerReg <- cancerReg %>% arrange(year) %>% mutate(MA=rollmean(cancerReg$measure ,k=14, fill=NA, align="right"))
+print(cancerReg)
+ggplot(cancerReg, aes(x = year, y = measure, col = area_name, position_jitter(width = 0.5, height = 0.5))) +
+    geom_point(size = 1.0) +
+    # geom_line(color = "blue", linewidth = 1) +
+    geom_line(aes(y=MA),colour="red")
+
 ``` 
 
 ```{r}
@@ -68,8 +81,8 @@ healthBoardData <- healthBoardData %>%
     mutate(
         Average = rowMeans(select(., `2003`:`2020`), na.rm = TRUE)
     )
-healthBoardData <- healthBoardData %>% mutate(across (`2003`: `2020`, ~ paste0(colourCells(.x, Average), .x)  ))
 kable(healthBoardData, format = "latex", booktabs = TRUE)
+healthBoardData
 ``` 
 
 

@@ -1,267 +1,253 @@
-area_code,area_type,area_name,year,period,type_definition,indicator,numerator,measure,upper_confidence_interval,lower_confidence_interval
-S08000015,Health board,NHS Ayrshire & Arran,2003,2002 to 2004 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2122.7,649.7,679.2,621.2
-S08000016,Health board,NHS Borders,2003,2002 to 2004 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,650,614.6,665.4,566.6
-S08000017,Health board,NHS Dumfries & Galloway,2003,2002 to 2004 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,916,620.5,663.4,579.7
-S08000019,Health board,NHS Forth Valley,2003,2002 to 2004 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,1504.7,651.8,687.3,617.7
-S08000020,Health board,NHS Grampian,2003,2002 to 2004 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2651.7,617.8,642.9,593.5
-S08000022,Health board,NHS Highland,2003,2002 to 2004 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,1661.7,602.9,633.8,573
-S08000024,Health board,NHS Lothian,2003,2002 to 2004 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,3986,655.1,676.7,633.9
-S08000025,Health board,NHS Orkney,2003,2002 to 2004 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,105,589,716.7,478.6
-S08000026,Health board,NHS Shetland,2003,2002 to 2004 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,109,616,749.2,500.5
-S08000028,Health board,NHS Western Isles,2003,2002 to 2004 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,167.7,652,763.1,552.9
-S08000029,Health board,NHS Fife,2003,2002 to 2004 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,1832.3,611.4,641.3,582.5
-S08000030,Health board,NHS Tayside,2003,2002 to 2004 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2197.3,611.2,638.1,585
-S08000031,Health board,NHS Greater Glasgow & Clyde,2003,2002 to 2004 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,6229.3,697.3,715.9,679.1
-S08000032,Health board,NHS Lanarkshire,2003,2002 to 2004 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,3118,633.7,658,610
-S08000015,Health board,NHS Ayrshire & Arran,2004,2003 to 2005 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2150,642.8,671.7,614.9
-S08000016,Health board,NHS Borders,2004,2003 to 2005 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,662.7,616.8,667.3,569.1
-S08000017,Health board,NHS Dumfries & Galloway,2004,2003 to 2005 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,964.3,645.2,688.7,603.7
-S08000019,Health board,NHS Forth Valley,2004,2003 to 2005 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,1520.7,648.2,683.1,614.6
-S08000020,Health board,NHS Grampian,2004,2003 to 2005 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2625,601.5,625.9,577.7
-S08000022,Health board,NHS Highland,2004,2003 to 2005 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,1687.3,594.5,624.7,565.3
-S08000024,Health board,NHS Lothian,2004,2003 to 2005 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,4059,660.8,682.3,639.7
-S08000025,Health board,NHS Orkney,2004,2003 to 2005 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,107.3,582.4,706.6,474.8
-S08000026,Health board,NHS Shetland,2004,2003 to 2005 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,116,636.7,769.5,520.9
-S08000028,Health board,NHS Western Isles,2004,2003 to 2005 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,165.3,628.1,736.2,531.7
-S08000029,Health board,NHS Fife,2004,2003 to 2005 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,1862.3,614,643.7,585.2
-S08000030,Health board,NHS Tayside,2004,2003 to 2005 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2209,607.3,634,581.4
-S08000031,Health board,NHS Greater Glasgow & Clyde,2004,2003 to 2005 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,6212,693.9,712.4,675.8
-S08000032,Health board,NHS Lanarkshire,2004,2003 to 2005 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,3166.3,632.7,656.6,609.4
-S08000015,Health board,NHS Ayrshire & Arran,2005,2004 to 2006 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2140,631.6,659.9,604.1
-S08000016,Health board,NHS Borders,2005,2004 to 2006 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,694.3,632.7,683,585.1
-S08000017,Health board,NHS Dumfries & Galloway,2005,2004 to 2006 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,967.7,639.4,682.4,598.3
-S08000019,Health board,NHS Forth Valley,2005,2004 to 2006 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,1532.7,642.8,677.2,609.7
-S08000020,Health board,NHS Grampian,2005,2004 to 2006 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2614.7,589.7,613.7,566.4
-S08000022,Health board,NHS Highland,2005,2004 to 2006 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,1731.7,598.9,628.9,569.8
-S08000024,Health board,NHS Lothian,2005,2004 to 2006 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,4102,659.4,680.7,638.5
-S08000025,Health board,NHS Orkney,2005,2004 to 2006 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,110,587.1,711.6,479.1
-S08000026,Health board,NHS Shetland,2005,2004 to 2006 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,105,571.8,698.4,462.3
-S08000028,Health board,NHS Western Isles,2005,2004 to 2006 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,164.7,610.3,715.1,516.9
-S08000029,Health board,NHS Fife,2005,2004 to 2006 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,1938.7,630.7,660.7,601.8
-S08000030,Health board,NHS Tayside,2005,2004 to 2006 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2207,600.6,627,575
-S08000031,Health board,NHS Greater Glasgow & Clyde,2005,2004 to 2006 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,6252.7,695,713.3,676.9
-S08000032,Health board,NHS Lanarkshire,2005,2004 to 2006 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,3264.7,643.5,667.3,620.3
-S08000015,Health board,NHS Ayrshire & Arran,2006,2005 to 2007 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2143.7,626.1,654.3,598.9
-S08000016,Health board,NHS Borders,2006,2005 to 2007 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,715.7,641.5,691.6,594.2
-S08000017,Health board,NHS Dumfries & Galloway,2006,2005 to 2007 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,990.7,642.1,684.6,601.6
-S08000019,Health board,NHS Forth Valley,2006,2005 to 2007 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,1497.7,618.3,651.7,586.1
-S08000020,Health board,NHS Grampian,2006,2005 to 2007 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2653.7,586.6,610.2,563.6
-S08000022,Health board,NHS Highland,2006,2005 to 2007 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,1812.3,613.3,643.3,584.4
-S08000024,Health board,NHS Lothian,2006,2005 to 2007 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,4211.3,666.1,687.3,645.3
-S08000025,Health board,NHS Orkney,2006,2005 to 2007 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,113.7,598.1,724.1,488.6
-S08000026,Health board,NHS Shetland,2006,2005 to 2007 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,107.3,574.3,699.3,466
-S08000028,Health board,NHS Western Isles,2006,2005 to 2007 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,182.3,664.4,772,568
-S08000029,Health board,NHS Fife,2006,2005 to 2007 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2001.3,641.7,671.6,612.7
-S08000030,Health board,NHS Tayside,2006,2005 to 2007 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2223.7,596,622.1,570.7
-S08000031,Health board,NHS Greater Glasgow & Clyde,2006,2005 to 2007 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,6233.7,687.6,705.7,669.8
-S08000032,Health board,NHS Lanarkshire,2006,2005 to 2007 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,3301,637.3,660.5,614.6
-S08000015,Health board,NHS Ayrshire & Arran,2007,2006 to 2008 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2204.7,636.4,664.6,609
-S08000016,Health board,NHS Borders,2007,2006 to 2008 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,730,643.5,693.2,596.5
-S08000017,Health board,NHS Dumfries & Galloway,2007,2006 to 2008 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,963.7,613.4,654.4,574.2
-S08000019,Health board,NHS Forth Valley,2007,2006 to 2008 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,1552.3,633.2,666.9,600.8
-S08000020,Health board,NHS Grampian,2007,2006 to 2008 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2745.7,595.9,619.5,573
-S08000022,Health board,NHS Highland,2007,2006 to 2008 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,1897.7,627.4,657.3,598.5
-S08000024,Health board,NHS Lothian,2007,2006 to 2008 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,4291,668.7,689.9,648.1
-S08000025,Health board,NHS Orkney,2007,2006 to 2008 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,113.3,587.4,712.9,478.4
-S08000026,Health board,NHS Shetland,2007,2006 to 2008 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,106.7,562.6,685.3,456.3
-S08000028,Health board,NHS Western Isles,2007,2006 to 2008 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,199,707.2,817.2,608.1
-S08000029,Health board,NHS Fife,2007,2006 to 2008 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2057.3,648.9,678.7,620.1
-S08000030,Health board,NHS Tayside,2007,2006 to 2008 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2340.7,617.6,643.9,592.1
-S08000031,Health board,NHS Greater Glasgow & Clyde,2007,2006 to 2008 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,6377.3,698.1,716.3,680.3
-S08000032,Health board,NHS Lanarkshire,2007,2006 to 2008 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,3378.3,640.5,663.6,618
-S08000015,Health board,NHS Ayrshire & Arran,2008,2007 to 2009 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2283,648.2,676.4,620.8
-S08000016,Health board,NHS Borders,2008,2007 to 2009 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,725,627.5,676.2,581.4
-S08000017,Health board,NHS Dumfries & Galloway,2008,2007 to 2009 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,994.3,619.8,660.6,581
-S08000019,Health board,NHS Forth Valley,2008,2007 to 2009 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,1592,638.9,672.5,606.6
-S08000020,Health board,NHS Grampian,2008,2007 to 2009 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2847,605,628.5,582.2
-S08000022,Health board,NHS Highland,2008,2007 to 2009 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,1951.3,627.6,657,599.2
-S08000024,Health board,NHS Lothian,2008,2007 to 2009 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,4451.3,683.4,704.6,662.6
-S08000025,Health board,NHS Orkney,2008,2007 to 2009 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,119,589.3,711.1,483.1
-S08000026,Health board,NHS Shetland,2008,2007 to 2009 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,117.3,594.9,716.6,488.9
-S08000028,Health board,NHS Western Isles,2008,2007 to 2009 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,209.3,726,836.3,626.5
-S08000029,Health board,NHS Fife,2008,2007 to 2009 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2074,643.9,673.4,615.4
-S08000030,Health board,NHS Tayside,2008,2007 to 2009 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2400.7,621.1,647.2,595.8
-S08000031,Health board,NHS Greater Glasgow & Clyde,2008,2007 to 2009 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,6556,710.9,729.2,692.9
-S08000032,Health board,NHS Lanarkshire,2008,2007 to 2009 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,3491.7,649.8,672.9,627.4
-S08000015,Health board,NHS Ayrshire & Arran,2009,2008 to 2010 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2346,652.2,680.1,625.2
-S08000016,Health board,NHS Borders,2009,2008 to 2010 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,751.3,633.8,682,588.1
-S08000017,Health board,NHS Dumfries & Galloway,2009,2008 to 2010 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,993.3,609.1,649,570.9
-S08000019,Health board,NHS Forth Valley,2009,2008 to 2010 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,1644.3,649.8,683.4,617.4
-S08000020,Health board,NHS Grampian,2009,2008 to 2010 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2891.7,605.4,628.7,582.8
-S08000022,Health board,NHS Highland,2009,2008 to 2010 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,1986,625.8,654.8,597.8
-S08000024,Health board,NHS Lothian,2009,2008 to 2010 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,4508.3,681.6,702.6,661.1
-S08000025,Health board,NHS Orkney,2009,2008 to 2010 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,114.7,543,654.1,446.2
-S08000026,Health board,NHS Shetland,2009,2008 to 2010 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,119.3,596,717.6,489.9
-S08000028,Health board,NHS Western Isles,2009,2008 to 2010 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,210,715,824.2,616.4
-S08000029,Health board,NHS Fife,2009,2008 to 2010 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2108,640.4,669.2,612.5
-S08000030,Health board,NHS Tayside,2009,2008 to 2010 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2400,613.7,639.5,588.8
-S08000031,Health board,NHS Greater Glasgow & Clyde,2009,2008 to 2010 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,6678.3,715.4,733.5,697.6
-S08000032,Health board,NHS Lanarkshire,2009,2008 to 2010 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,3629,665.6,688.8,643.1
-S08000015,Health board,NHS Ayrshire & Arran,2010,2009 to 2011 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2352.7,643.8,671.2,617.3
-S08000016,Health board,NHS Borders,2010,2009 to 2011 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,745.7,614.8,661.6,570.5
-S08000017,Health board,NHS Dumfries & Galloway,2010,2009 to 2011 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,1035.3,628.9,669.4,590.3
-S08000019,Health board,NHS Forth Valley,2010,2009 to 2011 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,1648,634.1,666.6,602.8
-S08000020,Health board,NHS Grampian,2010,2009 to 2011 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2948.3,608.5,631.6,586
-S08000022,Health board,NHS Highland,2010,2009 to 2011 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2020.7,625.4,653.9,597.8
-S08000024,Health board,NHS Lothian,2010,2009 to 2011 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,4648.7,691.8,712.6,671.3
-S08000025,Health board,NHS Orkney,2010,2009 to 2011 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,122,569.2,681.8,470.7
-S08000026,Health board,NHS Shetland,2010,2009 to 2011 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,134.7,663.4,789.6,552.4
-S08000028,Health board,NHS Western Isles,2010,2009 to 2011 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,201.3,674.4,779.5,579.8
-S08000029,Health board,NHS Fife,2010,2009 to 2011 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2164.7,650,678.8,622
-S08000030,Health board,NHS Tayside,2010,2009 to 2011 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2391.7,603.1,628.3,578.6
-S08000031,Health board,NHS Greater Glasgow & Clyde,2010,2009 to 2011 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,6744.3,714.4,732.3,696.7
-S08000032,Health board,NHS Lanarkshire,2010,2009 to 2011 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,3728.7,675,698.1,652.5
-S08000015,Health board,NHS Ayrshire & Arran,2011,2010 to 2012 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2386.7,643.2,670.2,617
-S08000016,Health board,NHS Borders,2011,2010 to 2012 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,760.3,614.5,660.7,570.7
-S08000017,Health board,NHS Dumfries & Galloway,2011,2010 to 2012 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,1027.3,617.6,657.5,579.5
-S08000019,Health board,NHS Forth Valley,2011,2010 to 2012 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,1649,620.3,651.9,589.8
-S08000020,Health board,NHS Grampian,2011,2010 to 2012 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2987.3,606.2,629,584
-S08000022,Health board,NHS Highland,2011,2010 to 2012 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2023.3,616.8,644.9,589.6
-S08000024,Health board,NHS Lothian,2011,2010 to 2012 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,4682.3,684.3,704.8,664.2
-S08000025,Health board,NHS Orkney,2011,2010 to 2012 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,114.7,531.3,640.1,436.5
-S08000026,Health board,NHS Shetland,2011,2010 to 2012 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,140,685.6,813.3,573.1
-S08000028,Health board,NHS Western Isles,2011,2010 to 2012 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,194,646,748,554.3
-S08000029,Health board,NHS Fife,2011,2010 to 2012 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2211.7,651.3,679.7,623.8
-S08000030,Health board,NHS Tayside,2011,2010 to 2012 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2428.7,606.9,632,582.5
-S08000031,Health board,NHS Greater Glasgow & Clyde,2011,2010 to 2012 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,6818,712.3,730,694.9
-S08000032,Health board,NHS Lanarkshire,2011,2010 to 2012 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,3815.7,677.5,700.3,655.2
-S08000015,Health board,NHS Ayrshire & Arran,2012,2011 to 2013 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2459.7,654.3,681.4,628.1
-S08000016,Health board,NHS Borders,2012,2011 to 2013 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,763.7,608.5,654.1,565.2
-S08000017,Health board,NHS Dumfries & Galloway,2012,2011 to 2013 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,1016,602.7,641.8,565.5
-S08000019,Health board,NHS Forth Valley,2012,2011 to 2013 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,1671.7,617.3,648.5,587.2
-S08000020,Health board,NHS Grampian,2012,2011 to 2013 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,3045,606.8,629.3,584.9
-S08000022,Health board,NHS Highland,2012,2011 to 2013 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2053,614.3,642.1,587.5
-S08000024,Health board,NHS Lothian,2012,2011 to 2013 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,4817.3,691.6,712,671.7
-S08000025,Health board,NHS Orkney,2012,2011 to 2013 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,121.3,549.1,658.1,453.9
-S08000026,Health board,NHS Shetland,2012,2011 to 2013 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,154,731.7,860.5,617.4
-S08000028,Health board,NHS Western Isles,2012,2011 to 2013 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,200.7,651.6,751.2,562
-S08000029,Health board,NHS Fife,2012,2011 to 2013 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2273.3,659.4,687.7,631.9
-S08000030,Health board,NHS Tayside,2012,2011 to 2013 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2504.3,616.1,641.2,591.8
-S08000031,Health board,NHS Greater Glasgow & Clyde,2012,2011 to 2013 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,6891,713.3,730.9,696
-S08000032,Health board,NHS Lanarkshire,2012,2011 to 2013 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,3849,672.7,695.1,650.8
-S08000015,Health board,NHS Ayrshire & Arran,2013,2012 to 2014 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2524,659.6,686.4,633.6
-S08000016,Health board,NHS Borders,2013,2012 to 2014 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,791.7,621.2,667.1,577.7
-S08000017,Health board,NHS Dumfries & Galloway,2013,2012 to 2014 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,1064.7,619.9,658.9,582.5
-S08000019,Health board,NHS Forth Valley,2013,2012 to 2014 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,1725,626.7,657.8,596.7
-S08000020,Health board,NHS Grampian,2013,2012 to 2014 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,3104.7,607.1,629.3,585.5
-S08000022,Health board,NHS Highland,2013,2012 to 2014 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2057.7,604.8,632.1,578.4
-S08000024,Health board,NHS Lothian,2013,2012 to 2014 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,4873.3,686.7,706.8,667.1
-S08000025,Health board,NHS Orkney,2013,2012 to 2014 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,114.7,496.1,597.1,408.2
-S08000026,Health board,NHS Shetland,2013,2012 to 2014 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,148,689.3,813.3,579.6
-S08000028,Health board,NHS Western Isles,2013,2012 to 2014 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,194.7,626.6,723,540
-S08000029,Health board,NHS Fife,2013,2012 to 2014 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2301.3,654.5,682.4,627.4
-S08000030,Health board,NHS Tayside,2013,2012 to 2014 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2563,622.6,647.6,598.3
-S08000031,Health board,NHS Greater Glasgow & Clyde,2013,2012 to 2014 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,7021.3,718.2,735.7,701
-S08000032,Health board,NHS Lanarkshire,2013,2012 to 2014 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,3881.7,666.5,688.6,645
-S08000015,Health board,NHS Ayrshire & Arran,2014,2013 to 2015 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2571,662.1,688.7,636.3
-S08000016,Health board,NHS Borders,2014,2013 to 2015 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,810,625.5,671.1,582.3
-S08000017,Health board,NHS Dumfries & Galloway,2014,2013 to 2015 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,1073,616.1,654.7,579.2
-S08000019,Health board,NHS Forth Valley,2014,2013 to 2015 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,1758.3,630.4,661.3,600.5
-S08000020,Health board,NHS Grampian,2014,2013 to 2015 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,3170.7,610.3,632.3,588.8
-S08000022,Health board,NHS Highland,2014,2013 to 2015 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2106.7,612.2,639.4,585.8
-S08000024,Health board,NHS Lothian,2014,2013 to 2015 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,4948.7,684.5,704.3,665.2
-S08000025,Health board,NHS Orkney,2014,2013 to 2015 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,124.7,529.1,631.8,439.3
-S08000026,Health board,NHS Shetland,2014,2013 to 2015 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,149.7,683.1,804.6,575.4
-S08000028,Health board,NHS Western Isles,2014,2013 to 2015 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,202.7,641.8,738.2,555.1
-S08000029,Health board,NHS Fife,2014,2013 to 2015 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2281.3,638.3,665.6,611.9
-S08000030,Health board,NHS Tayside,2014,2013 to 2015 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2626.3,627.8,652.7,603.6
-S08000031,Health board,NHS Greater Glasgow & Clyde,2014,2013 to 2015 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,7034.3,712,729.4,695
-S08000032,Health board,NHS Lanarkshire,2014,2013 to 2015 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,3878.3,654.8,676.5,633.7
-S08000015,Health board,NHS Ayrshire & Arran,2015,2014 to 2016 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2531,643.4,669.4,618.1
-S08000016,Health board,NHS Borders,2015,2014 to 2016 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,816,618.9,663.7,576.3
-S08000017,Health board,NHS Dumfries & Galloway,2015,2014 to 2016 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,1088.7,617.9,656.3,581.1
-S08000019,Health board,NHS Forth Valley,2015,2014 to 2016 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,1775,628.9,659.6,599.3
-S08000020,Health board,NHS Grampian,2015,2014 to 2016 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,3251.3,617.1,639.1,595.7
-S08000022,Health board,NHS Highland,2015,2014 to 2016 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2097,602.4,629.2,576.4
-S08000024,Health board,NHS Lothian,2015,2014 to 2016 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,4850,659.9,679.1,641
-S08000025,Health board,NHS Orkney,2015,2014 to 2016 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,122.3,508,607.3,421.1
-S08000026,Health board,NHS Shetland,2015,2014 to 2016 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,155.3,693.4,813.6,586.7
-S08000028,Health board,NHS Western Isles,2015,2014 to 2016 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,194.7,614.6,709,529.6
-S08000029,Health board,NHS Fife,2015,2014 to 2016 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2288.3,628.3,655,602.3
-S08000030,Health board,NHS Tayside,2015,2014 to 2016 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2678.3,632.1,656.8,608
-S08000031,Health board,NHS Greater Glasgow & Clyde,2015,2014 to 2016 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,7129.7,711.5,728.6,694.6
-S08000032,Health board,NHS Lanarkshire,2015,2014 to 2016 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,3914,649.1,670.4,628.3
-S08000015,Health board,NHS Ayrshire & Arran,2016,2015 to 2017 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2529,633.9,659.5,609
-S08000016,Health board,NHS Borders,2016,2015 to 2017 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,842.3,628.1,672.8,585.7
-S08000017,Health board,NHS Dumfries & Galloway,2016,2015 to 2017 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,1030.7,580.9,618.1,545.3
-S08000019,Health board,NHS Forth Valley,2016,2015 to 2017 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,1830.7,638.2,668.8,608.7
-S08000020,Health board,NHS Grampian,2016,2015 to 2017 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,3289,614.8,636.6,593.6
-S08000022,Health board,NHS Highland,2016,2015 to 2017 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2108.7,597.5,624.1,571.8
-S08000024,Health board,NHS Lothian,2016,2015 to 2017 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,4793,641.4,660.2,623
-S08000025,Health board,NHS Orkney,2016,2015 to 2017 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,127.7,521.7,621.5,434.2
-S08000026,Health board,NHS Shetland,2016,2015 to 2017 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,158,697.4,817.3,591
-S08000028,Health board,NHS Western Isles,2016,2015 to 2017 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,191.3,598.1,690.8,514.8
-S08000029,Health board,NHS Fife,2016,2015 to 2017 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2281.7,617.1,643.3,591.6
-S08000030,Health board,NHS Tayside,2016,2015 to 2017 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2711.7,631.2,655.8,607.4
-S08000031,Health board,NHS Greater Glasgow & Clyde,2016,2015 to 2017 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,7088.7,699.3,716.3,682.7
-S08000032,Health board,NHS Lanarkshire,2016,2015 to 2017 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,3979.3,650.3,671.5,629.7
-S08000015,Health board,NHS Ayrshire & Arran,2017,2016 to 2018 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2537.3,627.2,652.5,602.6
-S08000016,Health board,NHS Borders,2017,2016 to 2018 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,867,638.1,682.8,595.5
-S08000017,Health board,NHS Dumfries & Galloway,2017,2016 to 2018 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,1057,588.7,625.9,553.1
-S08000019,Health board,NHS Forth Valley,2017,2016 to 2018 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,1918,657.4,688.1,627.7
-S08000020,Health board,NHS Grampian,2017,2016 to 2018 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,3456,637.4,659.4,616
-S08000022,Health board,NHS Highland,2017,2016 to 2018 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2150,598.8,625.1,573.4
-S08000024,Health board,NHS Lothian,2017,2016 to 2018 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,4811.3,632.7,651.2,614.6
-S08000025,Health board,NHS Orkney,2017,2016 to 2018 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,129.7,516.3,614.3,430.3
-S08000026,Health board,NHS Shetland,2017,2016 to 2018 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,160.3,696.2,814.9,590.6
-S08000028,Health board,NHS Western Isles,2017,2016 to 2018 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,185.7,573.3,663.4,492.4
-S08000029,Health board,NHS Fife,2017,2016 to 2018 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2391.3,637.5,663.9,611.8
-S08000030,Health board,NHS Tayside,2017,2016 to 2018 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2744.3,632.1,656.5,608.4
-S08000031,Health board,NHS Greater Glasgow & Clyde,2017,2016 to 2018 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,7196.7,700.2,717,683.7
-S08000032,Health board,NHS Lanarkshire,2017,2016 to 2018 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,4096.7,659.8,680.8,639.2
-S08000015,Health board,NHS Ayrshire & Arran,2018,2017 to 2019 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2598.7,632.8,658,608.3
-S08000016,Health board,NHS Borders,2018,2017 to 2019 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,869.3,629.3,673.4,587.3
-S08000017,Health board,NHS Dumfries & Galloway,2018,2017 to 2019 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,1123,618.5,656.4,582.2
-S08000019,Health board,NHS Forth Valley,2018,2017 to 2019 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,1978.7,664.7,695.1,635.2
-S08000020,Health board,NHS Grampian,2018,2017 to 2019 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,3592.3,651.1,673,629.7
-S08000022,Health board,NHS Highland,2018,2017 to 2019 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2245,613.4,639.7,587.9
-S08000024,Health board,NHS Lothian,2018,2017 to 2019 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,4919,635.3,653.6,617.4
-S08000025,Health board,NHS Orkney,2018,2017 to 2019 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,139.7,550.7,651.1,462.2
-S08000026,Health board,NHS Shetland,2018,2017 to 2019 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,141,610.8,722.8,512.1
-S08000028,Health board,NHS Western Isles,2018,2017 to 2019 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,193.7,588.7,679,507.5
-S08000029,Health board,NHS Fife,2018,2017 to 2019 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2455.7,645.9,672.3,620.3
-S08000030,Health board,NHS Tayside,2018,2017 to 2019 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2737.3,623.9,648,600.5
-S08000031,Health board,NHS Greater Glasgow & Clyde,2018,2017 to 2019 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,7317,702,718.6,685.6
-S08000032,Health board,NHS Lanarkshire,2018,2017 to 2019 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,4174.3,661,681.9,640.6
-S08000015,Health board,NHS Ayrshire & Arran,2019,2018 to 2020 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2552.7,616,640.7,591.9
-S08000016,Health board,NHS Borders,2019,2018 to 2020 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,807,575.6,617.6,535.7
-S08000017,Health board,NHS Dumfries & Galloway,2019,2018 to 2020 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,1126.3,611.7,649.2,575.9
-S08000019,Health board,NHS Forth Valley,2019,2018 to 2020 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,1939,643.7,673.4,614.9
-S08000020,Health board,NHS Grampian,2019,2018 to 2020 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,3490.3,623.3,644.5,602.5
-S08000022,Health board,NHS Highland,2019,2018 to 2020 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2229.3,600.8,626.7,575.8
-S08000024,Health board,NHS Lothian,2019,2018 to 2020 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,4866,617.5,635.4,600
-S08000025,Health board,NHS Orkney,2019,2018 to 2020 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,148.3,575.9,677.6,485.8
-S08000026,Health board,NHS Shetland,2019,2018 to 2020 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,130.3,548.4,652.6,456.9
-S08000028,Health board,NHS Western Isles,2019,2018 to 2020 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,202,609,700.4,526.6
-S08000029,Health board,NHS Fife,2019,2018 to 2020 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2402.3,623.1,648.9,598.1
-S08000030,Health board,NHS Tayside,2019,2018 to 2020 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2621.3,592,615.4,569.3
-S08000031,Health board,NHS Greater Glasgow & Clyde,2019,2018 to 2020 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,7125.3,674.8,691,658.9
-S08000032,Health board,NHS Lanarkshire,2019,2018 to 2020 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,4073.3,635.4,655.7,615.6
-S08000015,Health board,NHS Ayrshire & Arran,2020,2019 to 2021 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2619,625.5,650.3,601.4
-S08000016,Health board,NHS Borders,2020,2019 to 2021 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,803.3,560.1,601,521.3
-S08000017,Health board,NHS Dumfries & Galloway,2020,2019 to 2021 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,1154.7,621.7,659.4,585.6
-S08000019,Health board,NHS Forth Valley,2020,2019 to 2021 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,1958.7,642.4,672,613.8
-S08000020,Health board,NHS Grampian,2020,2019 to 2021 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,3501.3,614.9,635.8,594.4
-S08000022,Health board,NHS Highland,2020,2019 to 2021 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2285.7,604.9,630.5,580
-S08000024,Health board,NHS Lothian,2020,2019 to 2021 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,5030.7,628.9,646.8,611.4
-S08000025,Health board,NHS Orkney,2020,2019 to 2021 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,152.3,586.6,688.9,495.9
-S08000026,Health board,NHS Shetland,2020,2019 to 2021 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,133.7,551.9,654.8,461.5
-S08000028,Health board,NHS Western Isles,2020,2019 to 2021 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,223,665.8,760.6,580
-S08000029,Health board,NHS Fife,2020,2019 to 2021 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2350.3,602,627.1,577.6
-S08000030,Health board,NHS Tayside,2020,2019 to 2021 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,2649,590.5,613.7,568
-S08000031,Health board,NHS Greater Glasgow & Clyde,2020,2019 to 2021 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,7178.7,673.5,689.5,657.7
-S08000032,Health board,NHS Lanarkshire,2020,2019 to 2021 calendar years; 3-year aggregates,"Age-sex standardised rate per 100,000",Cancer registrations,4052.3,624.1,644.1,604.6
-S08000015,Health board,NHS Ayrshire & Arran,2021,,,Cancer registrations,2672,,,
-S08000016,Health board,NHS Borders,2021,,,Cancer registrations,856,,,
-S08000017,Health board,NHS Dumfries & Galloway,2021,,,Cancer registrations,1198,,,
-S08000019,Health board,NHS Forth Valley,2021,,,Cancer registrations,1993,,,
-S08000020,Health board,NHS Grampian,2021,,,Cancer registrations,3623,,,
-S08000022,Health board,NHS Highland,2021,,,Cancer registrations,2457,,,
-S08000024,Health board,NHS Lothian,2021,,,Cancer registrations,5338,,,
-S08000025,Health board,NHS Orkney,2021,,,Cancer registrations,167,,,
-S08000026,Health board,NHS Shetland,2021,,,Cancer registrations,147,,,
-S08000028,Health board,NHS Western Isles,2021,,,Cancer registrations,228,,,
-S08000029,Health board,NHS Fife,2021,,,Cancer registrations,2406,,,
-S08000030,Health board,NHS Tayside,2021,,,Cancer registrations,2726,,,
-S08000031,Health board,NHS Greater Glasgow & Clyde,2021,,,Cancer registrations,7449,,,
-S08000032,Health board,NHS Lanarkshire,2021,,,Cancer registrations,4116,,,
+"area_code","area_type","area_name","year","period","type_definition","indicator","numerator","measure","upper_confidence_interval","lower_confidence_interval"
+"S08000015","Health board","NHS Ayrshire & Arran",2003,"2002 to 2004 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2122.7,649.7,679.2,621.2
+"S08000016","Health board","NHS Borders",2003,"2002 to 2004 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",650,614.6,665.4,566.6
+"S08000017","Health board","NHS Dumfries & Galloway",2003,"2002 to 2004 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",916,620.5,663.4,579.7
+"S08000019","Health board","NHS Forth Valley",2003,"2002 to 2004 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",1504.7,651.8,687.3,617.7
+"S08000020","Health board","NHS Grampian",2003,"2002 to 2004 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2651.7,617.8,642.9,593.5
+"S08000022","Health board","NHS Highland",2003,"2002 to 2004 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",1661.7,602.9,633.8,573
+"S08000024","Health board","NHS Lothian",2003,"2002 to 2004 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",3986,655.1,676.7,633.9
+"S08000025","Health board","NHS Orkney",2003,"2002 to 2004 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",105,589,716.7,478.6
+"S08000026","Health board","NHS Shetland",2003,"2002 to 2004 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",109,616,749.2,500.5
+"S08000028","Health board","NHS Western Isles",2003,"2002 to 2004 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",167.7,652,763.1,552.9
+"S08000029","Health board","NHS Fife",2003,"2002 to 2004 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",1832.3,611.4,641.3,582.5
+"S08000030","Health board","NHS Tayside",2003,"2002 to 2004 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2197.3,611.2,638.1,585
+"S08000031","Health board","NHS Greater Glasgow & Clyde",2003,"2002 to 2004 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",6229.3,697.3,715.9,679.1
+"S08000032","Health board","NHS Lanarkshire",2003,"2002 to 2004 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",3118,633.7,658,610
+"S08000015","Health board","NHS Ayrshire & Arran",2004,"2003 to 2005 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2150,642.8,671.7,614.9
+"S08000016","Health board","NHS Borders",2004,"2003 to 2005 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",662.7,616.8,667.3,569.1
+"S08000017","Health board","NHS Dumfries & Galloway",2004,"2003 to 2005 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",964.3,645.2,688.7,603.7
+"S08000019","Health board","NHS Forth Valley",2004,"2003 to 2005 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",1520.7,648.2,683.1,614.6
+"S08000020","Health board","NHS Grampian",2004,"2003 to 2005 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2625,601.5,625.9,577.7
+"S08000022","Health board","NHS Highland",2004,"2003 to 2005 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",1687.3,594.5,624.7,565.3
+"S08000024","Health board","NHS Lothian",2004,"2003 to 2005 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",4059,660.8,682.3,639.7
+"S08000025","Health board","NHS Orkney",2004,"2003 to 2005 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",107.3,582.4,706.6,474.8
+"S08000026","Health board","NHS Shetland",2004,"2003 to 2005 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",116,636.7,769.5,520.9
+"S08000028","Health board","NHS Western Isles",2004,"2003 to 2005 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",165.3,628.1,736.2,531.7
+"S08000029","Health board","NHS Fife",2004,"2003 to 2005 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",1862.3,614,643.7,585.2
+"S08000030","Health board","NHS Tayside",2004,"2003 to 2005 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2209,607.3,634,581.4
+"S08000031","Health board","NHS Greater Glasgow & Clyde",2004,"2003 to 2005 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",6212,693.9,712.4,675.8
+"S08000032","Health board","NHS Lanarkshire",2004,"2003 to 2005 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",3166.3,632.7,656.6,609.4
+"S08000015","Health board","NHS Ayrshire & Arran",2005,"2004 to 2006 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2140,631.6,659.9,604.1
+"S08000016","Health board","NHS Borders",2005,"2004 to 2006 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",694.3,632.7,683,585.1
+"S08000017","Health board","NHS Dumfries & Galloway",2005,"2004 to 2006 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",967.7,639.4,682.4,598.3
+"S08000019","Health board","NHS Forth Valley",2005,"2004 to 2006 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",1532.7,642.8,677.2,609.7
+"S08000020","Health board","NHS Grampian",2005,"2004 to 2006 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2614.7,589.7,613.7,566.4
+"S08000022","Health board","NHS Highland",2005,"2004 to 2006 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",1731.7,598.9,628.9,569.8
+"S08000024","Health board","NHS Lothian",2005,"2004 to 2006 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",4102,659.4,680.7,638.5
+"S08000025","Health board","NHS Orkney",2005,"2004 to 2006 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",110,587.1,711.6,479.1
+"S08000026","Health board","NHS Shetland",2005,"2004 to 2006 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",105,571.8,698.4,462.3
+"S08000028","Health board","NHS Western Isles",2005,"2004 to 2006 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",164.7,610.3,715.1,516.9
+"S08000029","Health board","NHS Fife",2005,"2004 to 2006 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",1938.7,630.7,660.7,601.8
+"S08000030","Health board","NHS Tayside",2005,"2004 to 2006 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2207,600.6,627,575
+"S08000031","Health board","NHS Greater Glasgow & Clyde",2005,"2004 to 2006 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",6252.7,695,713.3,676.9
+"S08000032","Health board","NHS Lanarkshire",2005,"2004 to 2006 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",3264.7,643.5,667.3,620.3
+"S08000015","Health board","NHS Ayrshire & Arran",2006,"2005 to 2007 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2143.7,626.1,654.3,598.9
+"S08000016","Health board","NHS Borders",2006,"2005 to 2007 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",715.7,641.5,691.6,594.2
+"S08000017","Health board","NHS Dumfries & Galloway",2006,"2005 to 2007 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",990.7,642.1,684.6,601.6
+"S08000019","Health board","NHS Forth Valley",2006,"2005 to 2007 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",1497.7,618.3,651.7,586.1
+"S08000020","Health board","NHS Grampian",2006,"2005 to 2007 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2653.7,586.6,610.2,563.6
+"S08000022","Health board","NHS Highland",2006,"2005 to 2007 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",1812.3,613.3,643.3,584.4
+"S08000024","Health board","NHS Lothian",2006,"2005 to 2007 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",4211.3,666.1,687.3,645.3
+"S08000025","Health board","NHS Orkney",2006,"2005 to 2007 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",113.7,598.1,724.1,488.6
+"S08000026","Health board","NHS Shetland",2006,"2005 to 2007 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",107.3,574.3,699.3,466
+"S08000028","Health board","NHS Western Isles",2006,"2005 to 2007 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",182.3,664.4,772,568
+"S08000029","Health board","NHS Fife",2006,"2005 to 2007 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2001.3,641.7,671.6,612.7
+"S08000030","Health board","NHS Tayside",2006,"2005 to 2007 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2223.7,596,622.1,570.7
+"S08000031","Health board","NHS Greater Glasgow & Clyde",2006,"2005 to 2007 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",6233.7,687.6,705.7,669.8
+"S08000032","Health board","NHS Lanarkshire",2006,"2005 to 2007 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",3301,637.3,660.5,614.6
+"S08000015","Health board","NHS Ayrshire & Arran",2007,"2006 to 2008 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2204.7,636.4,664.6,609
+"S08000016","Health board","NHS Borders",2007,"2006 to 2008 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",730,643.5,693.2,596.5
+"S08000017","Health board","NHS Dumfries & Galloway",2007,"2006 to 2008 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",963.7,613.4,654.4,574.2
+"S08000019","Health board","NHS Forth Valley",2007,"2006 to 2008 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",1552.3,633.2,666.9,600.8
+"S08000020","Health board","NHS Grampian",2007,"2006 to 2008 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2745.7,595.9,619.5,573
+"S08000022","Health board","NHS Highland",2007,"2006 to 2008 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",1897.7,627.4,657.3,598.5
+"S08000024","Health board","NHS Lothian",2007,"2006 to 2008 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",4291,668.7,689.9,648.1
+"S08000025","Health board","NHS Orkney",2007,"2006 to 2008 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",113.3,587.4,712.9,478.4
+"S08000026","Health board","NHS Shetland",2007,"2006 to 2008 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",106.7,562.6,685.3,456.3
+"S08000028","Health board","NHS Western Isles",2007,"2006 to 2008 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",199,707.2,817.2,608.1
+"S08000029","Health board","NHS Fife",2007,"2006 to 2008 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2057.3,648.9,678.7,620.1
+"S08000030","Health board","NHS Tayside",2007,"2006 to 2008 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2340.7,617.6,643.9,592.1
+"S08000031","Health board","NHS Greater Glasgow & Clyde",2007,"2006 to 2008 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",6377.3,698.1,716.3,680.3
+"S08000032","Health board","NHS Lanarkshire",2007,"2006 to 2008 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",3378.3,640.5,663.6,618
+"S08000015","Health board","NHS Ayrshire & Arran",2008,"2007 to 2009 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2283,648.2,676.4,620.8
+"S08000016","Health board","NHS Borders",2008,"2007 to 2009 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",725,627.5,676.2,581.4
+"S08000017","Health board","NHS Dumfries & Galloway",2008,"2007 to 2009 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",994.3,619.8,660.6,581
+"S08000019","Health board","NHS Forth Valley",2008,"2007 to 2009 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",1592,638.9,672.5,606.6
+"S08000020","Health board","NHS Grampian",2008,"2007 to 2009 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2847,605,628.5,582.2
+"S08000022","Health board","NHS Highland",2008,"2007 to 2009 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",1951.3,627.6,657,599.2
+"S08000024","Health board","NHS Lothian",2008,"2007 to 2009 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",4451.3,683.4,704.6,662.6
+"S08000025","Health board","NHS Orkney",2008,"2007 to 2009 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",119,589.3,711.1,483.1
+"S08000026","Health board","NHS Shetland",2008,"2007 to 2009 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",117.3,594.9,716.6,488.9
+"S08000028","Health board","NHS Western Isles",2008,"2007 to 2009 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",209.3,726,836.3,626.5
+"S08000029","Health board","NHS Fife",2008,"2007 to 2009 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2074,643.9,673.4,615.4
+"S08000030","Health board","NHS Tayside",2008,"2007 to 2009 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2400.7,621.1,647.2,595.8
+"S08000031","Health board","NHS Greater Glasgow & Clyde",2008,"2007 to 2009 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",6556,710.9,729.2,692.9
+"S08000032","Health board","NHS Lanarkshire",2008,"2007 to 2009 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",3491.7,649.8,672.9,627.4
+"S08000015","Health board","NHS Ayrshire & Arran",2009,"2008 to 2010 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2346,652.2,680.1,625.2
+"S08000016","Health board","NHS Borders",2009,"2008 to 2010 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",751.3,633.8,682,588.1
+"S08000017","Health board","NHS Dumfries & Galloway",2009,"2008 to 2010 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",993.3,609.1,649,570.9
+"S08000019","Health board","NHS Forth Valley",2009,"2008 to 2010 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",1644.3,649.8,683.4,617.4
+"S08000020","Health board","NHS Grampian",2009,"2008 to 2010 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2891.7,605.4,628.7,582.8
+"S08000022","Health board","NHS Highland",2009,"2008 to 2010 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",1986,625.8,654.8,597.8
+"S08000024","Health board","NHS Lothian",2009,"2008 to 2010 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",4508.3,681.6,702.6,661.1
+"S08000025","Health board","NHS Orkney",2009,"2008 to 2010 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",114.7,543,654.1,446.2
+"S08000026","Health board","NHS Shetland",2009,"2008 to 2010 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",119.3,596,717.6,489.9
+"S08000028","Health board","NHS Western Isles",2009,"2008 to 2010 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",210,715,824.2,616.4
+"S08000029","Health board","NHS Fife",2009,"2008 to 2010 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2108,640.4,669.2,612.5
+"S08000030","Health board","NHS Tayside",2009,"2008 to 2010 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2400,613.7,639.5,588.8
+"S08000031","Health board","NHS Greater Glasgow & Clyde",2009,"2008 to 2010 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",6678.3,715.4,733.5,697.6
+"S08000032","Health board","NHS Lanarkshire",2009,"2008 to 2010 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",3629,665.6,688.8,643.1
+"S08000015","Health board","NHS Ayrshire & Arran",2010,"2009 to 2011 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2352.7,643.8,671.2,617.3
+"S08000016","Health board","NHS Borders",2010,"2009 to 2011 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",745.7,614.8,661.6,570.5
+"S08000017","Health board","NHS Dumfries & Galloway",2010,"2009 to 2011 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",1035.3,628.9,669.4,590.3
+"S08000019","Health board","NHS Forth Valley",2010,"2009 to 2011 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",1648,634.1,666.6,602.8
+"S08000020","Health board","NHS Grampian",2010,"2009 to 2011 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2948.3,608.5,631.6,586
+"S08000022","Health board","NHS Highland",2010,"2009 to 2011 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2020.7,625.4,653.9,597.8
+"S08000024","Health board","NHS Lothian",2010,"2009 to 2011 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",4648.7,691.8,712.6,671.3
+"S08000025","Health board","NHS Orkney",2010,"2009 to 2011 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",122,569.2,681.8,470.7
+"S08000026","Health board","NHS Shetland",2010,"2009 to 2011 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",134.7,663.4,789.6,552.4
+"S08000028","Health board","NHS Western Isles",2010,"2009 to 2011 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",201.3,674.4,779.5,579.8
+"S08000029","Health board","NHS Fife",2010,"2009 to 2011 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2164.7,650,678.8,622
+"S08000030","Health board","NHS Tayside",2010,"2009 to 2011 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2391.7,603.1,628.3,578.6
+"S08000031","Health board","NHS Greater Glasgow & Clyde",2010,"2009 to 2011 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",6744.3,714.4,732.3,696.7
+"S08000032","Health board","NHS Lanarkshire",2010,"2009 to 2011 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",3728.7,675,698.1,652.5
+"S08000015","Health board","NHS Ayrshire & Arran",2011,"2010 to 2012 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2386.7,643.2,670.2,617
+"S08000016","Health board","NHS Borders",2011,"2010 to 2012 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",760.3,614.5,660.7,570.7
+"S08000017","Health board","NHS Dumfries & Galloway",2011,"2010 to 2012 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",1027.3,617.6,657.5,579.5
+"S08000019","Health board","NHS Forth Valley",2011,"2010 to 2012 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",1649,620.3,651.9,589.8
+"S08000020","Health board","NHS Grampian",2011,"2010 to 2012 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2987.3,606.2,629,584
+"S08000022","Health board","NHS Highland",2011,"2010 to 2012 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2023.3,616.8,644.9,589.6
+"S08000024","Health board","NHS Lothian",2011,"2010 to 2012 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",4682.3,684.3,704.8,664.2
+"S08000025","Health board","NHS Orkney",2011,"2010 to 2012 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",114.7,531.3,640.1,436.5
+"S08000026","Health board","NHS Shetland",2011,"2010 to 2012 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",140,685.6,813.3,573.1
+"S08000028","Health board","NHS Western Isles",2011,"2010 to 2012 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",194,646,748,554.3
+"S08000029","Health board","NHS Fife",2011,"2010 to 2012 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2211.7,651.3,679.7,623.8
+"S08000030","Health board","NHS Tayside",2011,"2010 to 2012 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2428.7,606.9,632,582.5
+"S08000031","Health board","NHS Greater Glasgow & Clyde",2011,"2010 to 2012 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",6818,712.3,730,694.9
+"S08000032","Health board","NHS Lanarkshire",2011,"2010 to 2012 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",3815.7,677.5,700.3,655.2
+"S08000015","Health board","NHS Ayrshire & Arran",2012,"2011 to 2013 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2459.7,654.3,681.4,628.1
+"S08000016","Health board","NHS Borders",2012,"2011 to 2013 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",763.7,608.5,654.1,565.2
+"S08000017","Health board","NHS Dumfries & Galloway",2012,"2011 to 2013 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",1016,602.7,641.8,565.5
+"S08000019","Health board","NHS Forth Valley",2012,"2011 to 2013 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",1671.7,617.3,648.5,587.2
+"S08000020","Health board","NHS Grampian",2012,"2011 to 2013 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",3045,606.8,629.3,584.9
+"S08000022","Health board","NHS Highland",2012,"2011 to 2013 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2053,614.3,642.1,587.5
+"S08000024","Health board","NHS Lothian",2012,"2011 to 2013 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",4817.3,691.6,712,671.7
+"S08000025","Health board","NHS Orkney",2012,"2011 to 2013 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",121.3,549.1,658.1,453.9
+"S08000026","Health board","NHS Shetland",2012,"2011 to 2013 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",154,731.7,860.5,617.4
+"S08000028","Health board","NHS Western Isles",2012,"2011 to 2013 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",200.7,651.6,751.2,562
+"S08000029","Health board","NHS Fife",2012,"2011 to 2013 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2273.3,659.4,687.7,631.9
+"S08000030","Health board","NHS Tayside",2012,"2011 to 2013 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2504.3,616.1,641.2,591.8
+"S08000031","Health board","NHS Greater Glasgow & Clyde",2012,"2011 to 2013 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",6891,713.3,730.9,696
+"S08000032","Health board","NHS Lanarkshire",2012,"2011 to 2013 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",3849,672.7,695.1,650.8
+"S08000015","Health board","NHS Ayrshire & Arran",2013,"2012 to 2014 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2524,659.6,686.4,633.6
+"S08000016","Health board","NHS Borders",2013,"2012 to 2014 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",791.7,621.2,667.1,577.7
+"S08000017","Health board","NHS Dumfries & Galloway",2013,"2012 to 2014 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",1064.7,619.9,658.9,582.5
+"S08000019","Health board","NHS Forth Valley",2013,"2012 to 2014 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",1725,626.7,657.8,596.7
+"S08000020","Health board","NHS Grampian",2013,"2012 to 2014 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",3104.7,607.1,629.3,585.5
+"S08000022","Health board","NHS Highland",2013,"2012 to 2014 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2057.7,604.8,632.1,578.4
+"S08000024","Health board","NHS Lothian",2013,"2012 to 2014 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",4873.3,686.7,706.8,667.1
+"S08000025","Health board","NHS Orkney",2013,"2012 to 2014 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",114.7,496.1,597.1,408.2
+"S08000026","Health board","NHS Shetland",2013,"2012 to 2014 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",148,689.3,813.3,579.6
+"S08000028","Health board","NHS Western Isles",2013,"2012 to 2014 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",194.7,626.6,723,540
+"S08000029","Health board","NHS Fife",2013,"2012 to 2014 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2301.3,654.5,682.4,627.4
+"S08000030","Health board","NHS Tayside",2013,"2012 to 2014 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2563,622.6,647.6,598.3
+"S08000031","Health board","NHS Greater Glasgow & Clyde",2013,"2012 to 2014 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",7021.3,718.2,735.7,701
+"S08000032","Health board","NHS Lanarkshire",2013,"2012 to 2014 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",3881.7,666.5,688.6,645
+"S08000015","Health board","NHS Ayrshire & Arran",2014,"2013 to 2015 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2571,662.1,688.7,636.3
+"S08000016","Health board","NHS Borders",2014,"2013 to 2015 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",810,625.5,671.1,582.3
+"S08000017","Health board","NHS Dumfries & Galloway",2014,"2013 to 2015 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",1073,616.1,654.7,579.2
+"S08000019","Health board","NHS Forth Valley",2014,"2013 to 2015 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",1758.3,630.4,661.3,600.5
+"S08000020","Health board","NHS Grampian",2014,"2013 to 2015 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",3170.7,610.3,632.3,588.8
+"S08000022","Health board","NHS Highland",2014,"2013 to 2015 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2106.7,612.2,639.4,585.8
+"S08000024","Health board","NHS Lothian",2014,"2013 to 2015 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",4948.7,684.5,704.3,665.2
+"S08000025","Health board","NHS Orkney",2014,"2013 to 2015 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",124.7,529.1,631.8,439.3
+"S08000026","Health board","NHS Shetland",2014,"2013 to 2015 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",149.7,683.1,804.6,575.4
+"S08000028","Health board","NHS Western Isles",2014,"2013 to 2015 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",202.7,641.8,738.2,555.1
+"S08000029","Health board","NHS Fife",2014,"2013 to 2015 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2281.3,638.3,665.6,611.9
+"S08000030","Health board","NHS Tayside",2014,"2013 to 2015 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2626.3,627.8,652.7,603.6
+"S08000031","Health board","NHS Greater Glasgow & Clyde",2014,"2013 to 2015 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",7034.3,712,729.4,695
+"S08000032","Health board","NHS Lanarkshire",2014,"2013 to 2015 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",3878.3,654.8,676.5,633.7
+"S08000015","Health board","NHS Ayrshire & Arran",2015,"2014 to 2016 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2531,643.4,669.4,618.1
+"S08000016","Health board","NHS Borders",2015,"2014 to 2016 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",816,618.9,663.7,576.3
+"S08000017","Health board","NHS Dumfries & Galloway",2015,"2014 to 2016 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",1088.7,617.9,656.3,581.1
+"S08000019","Health board","NHS Forth Valley",2015,"2014 to 2016 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",1775,628.9,659.6,599.3
+"S08000020","Health board","NHS Grampian",2015,"2014 to 2016 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",3251.3,617.1,639.1,595.7
+"S08000022","Health board","NHS Highland",2015,"2014 to 2016 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2097,602.4,629.2,576.4
+"S08000024","Health board","NHS Lothian",2015,"2014 to 2016 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",4850,659.9,679.1,641
+"S08000025","Health board","NHS Orkney",2015,"2014 to 2016 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",122.3,508,607.3,421.1
+"S08000026","Health board","NHS Shetland",2015,"2014 to 2016 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",155.3,693.4,813.6,586.7
+"S08000028","Health board","NHS Western Isles",2015,"2014 to 2016 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",194.7,614.6,709,529.6
+"S08000029","Health board","NHS Fife",2015,"2014 to 2016 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2288.3,628.3,655,602.3
+"S08000030","Health board","NHS Tayside",2015,"2014 to 2016 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2678.3,632.1,656.8,608
+"S08000031","Health board","NHS Greater Glasgow & Clyde",2015,"2014 to 2016 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",7129.7,711.5,728.6,694.6
+"S08000032","Health board","NHS Lanarkshire",2015,"2014 to 2016 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",3914,649.1,670.4,628.3
+"S08000015","Health board","NHS Ayrshire & Arran",2016,"2015 to 2017 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2529,633.9,659.5,609
+"S08000016","Health board","NHS Borders",2016,"2015 to 2017 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",842.3,628.1,672.8,585.7
+"S08000017","Health board","NHS Dumfries & Galloway",2016,"2015 to 2017 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",1030.7,580.9,618.1,545.3
+"S08000019","Health board","NHS Forth Valley",2016,"2015 to 2017 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",1830.7,638.2,668.8,608.7
+"S08000020","Health board","NHS Grampian",2016,"2015 to 2017 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",3289,614.8,636.6,593.6
+"S08000022","Health board","NHS Highland",2016,"2015 to 2017 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2108.7,597.5,624.1,571.8
+"S08000024","Health board","NHS Lothian",2016,"2015 to 2017 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",4793,641.4,660.2,623
+"S08000025","Health board","NHS Orkney",2016,"2015 to 2017 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",127.7,521.7,621.5,434.2
+"S08000026","Health board","NHS Shetland",2016,"2015 to 2017 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",158,697.4,817.3,591
+"S08000028","Health board","NHS Western Isles",2016,"2015 to 2017 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",191.3,598.1,690.8,514.8
+"S08000029","Health board","NHS Fife",2016,"2015 to 2017 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2281.7,617.1,643.3,591.6
+"S08000030","Health board","NHS Tayside",2016,"2015 to 2017 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2711.7,631.2,655.8,607.4
+"S08000031","Health board","NHS Greater Glasgow & Clyde",2016,"2015 to 2017 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",7088.7,699.3,716.3,682.7
+"S08000032","Health board","NHS Lanarkshire",2016,"2015 to 2017 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",3979.3,650.3,671.5,629.7
+"S08000015","Health board","NHS Ayrshire & Arran",2017,"2016 to 2018 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2537.3,627.2,652.5,602.6
+"S08000016","Health board","NHS Borders",2017,"2016 to 2018 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",867,638.1,682.8,595.5
+"S08000017","Health board","NHS Dumfries & Galloway",2017,"2016 to 2018 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",1057,588.7,625.9,553.1
+"S08000019","Health board","NHS Forth Valley",2017,"2016 to 2018 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",1918,657.4,688.1,627.7
+"S08000020","Health board","NHS Grampian",2017,"2016 to 2018 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",3456,637.4,659.4,616
+"S08000022","Health board","NHS Highland",2017,"2016 to 2018 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2150,598.8,625.1,573.4
+"S08000024","Health board","NHS Lothian",2017,"2016 to 2018 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",4811.3,632.7,651.2,614.6
+"S08000025","Health board","NHS Orkney",2017,"2016 to 2018 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",129.7,516.3,614.3,430.3
+"S08000026","Health board","NHS Shetland",2017,"2016 to 2018 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",160.3,696.2,814.9,590.6
+"S08000028","Health board","NHS Western Isles",2017,"2016 to 2018 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",185.7,573.3,663.4,492.4
+"S08000029","Health board","NHS Fife",2017,"2016 to 2018 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2391.3,637.5,663.9,611.8
+"S08000030","Health board","NHS Tayside",2017,"2016 to 2018 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2744.3,632.1,656.5,608.4
+"S08000031","Health board","NHS Greater Glasgow & Clyde",2017,"2016 to 2018 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",7196.7,700.2,717,683.7
+"S08000032","Health board","NHS Lanarkshire",2017,"2016 to 2018 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",4096.7,659.8,680.8,639.2
+"S08000015","Health board","NHS Ayrshire & Arran",2018,"2017 to 2019 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2598.7,632.8,658,608.3
+"S08000016","Health board","NHS Borders",2018,"2017 to 2019 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",869.3,629.3,673.4,587.3
+"S08000017","Health board","NHS Dumfries & Galloway",2018,"2017 to 2019 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",1123,618.5,656.4,582.2
+"S08000019","Health board","NHS Forth Valley",2018,"2017 to 2019 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",1978.7,664.7,695.1,635.2
+"S08000020","Health board","NHS Grampian",2018,"2017 to 2019 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",3592.3,651.1,673,629.7
+"S08000022","Health board","NHS Highland",2018,"2017 to 2019 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2245,613.4,639.7,587.9
+"S08000024","Health board","NHS Lothian",2018,"2017 to 2019 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",4919,635.3,653.6,617.4
+"S08000025","Health board","NHS Orkney",2018,"2017 to 2019 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",139.7,550.7,651.1,462.2
+"S08000026","Health board","NHS Shetland",2018,"2017 to 2019 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",141,610.8,722.8,512.1
+"S08000028","Health board","NHS Western Isles",2018,"2017 to 2019 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",193.7,588.7,679,507.5
+"S08000029","Health board","NHS Fife",2018,"2017 to 2019 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2455.7,645.9,672.3,620.3
+"S08000030","Health board","NHS Tayside",2018,"2017 to 2019 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2737.3,623.9,648,600.5
+"S08000031","Health board","NHS Greater Glasgow & Clyde",2018,"2017 to 2019 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",7317,702,718.6,685.6
+"S08000032","Health board","NHS Lanarkshire",2018,"2017 to 2019 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",4174.3,661,681.9,640.6
+"S08000015","Health board","NHS Ayrshire & Arran",2019,"2018 to 2020 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2552.7,616,640.7,591.9
+"S08000016","Health board","NHS Borders",2019,"2018 to 2020 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",807,575.6,617.6,535.7
+"S08000017","Health board","NHS Dumfries & Galloway",2019,"2018 to 2020 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",1126.3,611.7,649.2,575.9
+"S08000019","Health board","NHS Forth Valley",2019,"2018 to 2020 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",1939,643.7,673.4,614.9
+"S08000020","Health board","NHS Grampian",2019,"2018 to 2020 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",3490.3,623.3,644.5,602.5
+"S08000022","Health board","NHS Highland",2019,"2018 to 2020 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2229.3,600.8,626.7,575.8
+"S08000024","Health board","NHS Lothian",2019,"2018 to 2020 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",4866,617.5,635.4,600
+"S08000025","Health board","NHS Orkney",2019,"2018 to 2020 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",148.3,575.9,677.6,485.8
+"S08000026","Health board","NHS Shetland",2019,"2018 to 2020 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",130.3,548.4,652.6,456.9
+"S08000028","Health board","NHS Western Isles",2019,"2018 to 2020 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",202,609,700.4,526.6
+"S08000029","Health board","NHS Fife",2019,"2018 to 2020 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2402.3,623.1,648.9,598.1
+"S08000030","Health board","NHS Tayside",2019,"2018 to 2020 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2621.3,592,615.4,569.3
+"S08000031","Health board","NHS Greater Glasgow & Clyde",2019,"2018 to 2020 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",7125.3,674.8,691,658.9
+"S08000032","Health board","NHS Lanarkshire",2019,"2018 to 2020 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",4073.3,635.4,655.7,615.6
+"S08000015","Health board","NHS Ayrshire & Arran",2020,"2019 to 2021 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2619,625.5,650.3,601.4
+"S08000016","Health board","NHS Borders",2020,"2019 to 2021 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",803.3,560.1,601,521.3
+"S08000017","Health board","NHS Dumfries & Galloway",2020,"2019 to 2021 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",1154.7,621.7,659.4,585.6
+"S08000019","Health board","NHS Forth Valley",2020,"2019 to 2021 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",1958.7,642.4,672,613.8
+"S08000020","Health board","NHS Grampian",2020,"2019 to 2021 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",3501.3,614.9,635.8,594.4
+"S08000022","Health board","NHS Highland",2020,"2019 to 2021 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2285.7,604.9,630.5,580
+"S08000024","Health board","NHS Lothian",2020,"2019 to 2021 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",5030.7,628.9,646.8,611.4
+"S08000025","Health board","NHS Orkney",2020,"2019 to 2021 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",152.3,586.6,688.9,495.9
+"S08000026","Health board","NHS Shetland",2020,"2019 to 2021 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",133.7,551.9,654.8,461.5
+"S08000028","Health board","NHS Western Isles",2020,"2019 to 2021 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",223,665.8,760.6,580
+"S08000029","Health board","NHS Fife",2020,"2019 to 2021 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2350.3,602,627.1,577.6
+"S08000030","Health board","NHS Tayside",2020,"2019 to 2021 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",2649,590.5,613.7,568
+"S08000031","Health board","NHS Greater Glasgow & Clyde",2020,"2019 to 2021 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",7178.7,673.5,689.5,657.7
+"S08000032","Health board","NHS Lanarkshire",2020,"2019 to 2021 calendar years; 3-year aggregates","Age-sex standardised rate per 100,000","Cancer registrations",4052.3,624.1,644.1,604.6
