@@ -24,6 +24,7 @@ library(formattable)
 library(viridis)
 library(TTR)
 library(zoo)
+library(ggrepel)
 ```
 
 ### Load in the data 
@@ -51,12 +52,21 @@ cancerReg <- cancerReg %>% select(-period,-area_type,-type_definition,-indicator
 #     geom_point(size = 3, position = position_jitter(h = 0.50, w = 0.50), alpha = 0.5) +
 #     geom_smooth(se=FALSE, size = 0.7 )
 
-cancerReg <- cancerReg %>% arrange(year) %>% mutate(MA=rollmean(cancerReg$measure ,k=14, fill=NA, align="right"))
-print(cancerReg)
-ggplot(cancerReg, aes(x = year, y = measure, col = area_name, position_jitter(width = 0.5, height = 0.5))) +
-    geom_point(size = 1.0) +
-    # geom_line(color = "blue", linewidth = 1) +
-    geom_line(aes(y=MA),colour="red")
+
+cancerReg <- cancerReg %>%
+    arrange(year) %>%
+    mutate(MA = rollmean(cancerReg$measure, k = 14, fill = NA, align = "right"))
+
+subData <- cancerReg[seq(1, nrow(cancerReg), 14), ]
+ggplot(cancerReg, aes(x = year)) +
+    geom_smooth(aes(y = measure, col = area_name), se = FALSE, size = 0.5, alpha = 0.5) +
+    # geom_text_repel(data = cancerReg, aes(y = measure, label = area_name), nudge_x = 1, na.rm = TRUE)+
+    geom_text_repel(aes(colour=area_name))
+    geom_point(data = subData, aes(y = MA), color = "black", size = 2) +
+    geom_line(data = subData, aes(y = MA), colour = "black", linetype = "dashed", size = 0.7) +
+    theme(legend.position = "none")
+    
+
 
 ``` 
 
