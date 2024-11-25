@@ -38,6 +38,20 @@ cancerReg <- read.csv("C:\\Users\\romin\\ToyRepo\\Models\\cancerReg.csv")
 cancerReg <- cancerReg %>% select(-period,-area_type,-type_definition,-indicator, -upper_confidence_interval, -lower_confidence_interval, -numerator)
 ```
 
+### Find Average of All Measures by Year
+```{r}
+wide_data <- cancerReg %>% select(-MA, -area_code) %>%
+  group_by(area_name, year) %>%  # Group by area_name and year
+
+  pivot_wider(
+    names_from = area_name,   # Columns will be created from the 'year' variable
+    values_from = measure # Values in the new columns will come from the 'measure' variable
+  )
+
+# View the reshaped data
+
+```
+
 
 ### Display Summary of All Data
 ```{r}
@@ -55,17 +69,44 @@ cancerReg <- cancerReg %>% select(-period,-area_type,-type_definition,-indicator
 
 cancerReg <- cancerReg %>%
     arrange(year) %>%
-    mutate(MA = rollmean(cancerReg$measure, k = 14, fill = NA, align = "right"))
-
-subData <- cancerReg[seq(1, nrow(cancerReg), 14), ]
+    mutate(MA = rollmean(cancerReg$measure, k = 1, fill = NA, align = "right"))
+finalValues <- cancerReg %>%
+    group_by(area_name) %>%
+    summarise(
+        lastMA = dplyr::last(measure),
+        lastYear=dplyr::last(year)
+    )
+finalValues
+options(repr.plot.width =20, repr.plot.height =20) 
+subData <- cancerReg[seq(0, nrow(cancerReg), 14), ]
+subData <- subData %>% select(-area_name)
+print(subData)
 ggplot(cancerReg, aes(x = year)) +
-    geom_smooth(aes(y = measure, col = area_name), se = FALSE, size = 0.5, alpha = 0.5) +
-    # geom_text_repel(data = cancerReg, aes(y = measure, label = area_name), nudge_x = 1, na.rm = TRUE)+
-    geom_text_repel(aes(colour=area_name))
-    geom_point(data = subData, aes(y = MA), color = "black", size = 2) +
+    geom_point(data = subData, aes(x=year, y = MA), color = "black", size = 2) +
     geom_line(data = subData, aes(y = MA), colour = "black", linetype = "dashed", size = 0.7) +
-    theme(legend.position = "none")
-    
+    geom_pointline(aes(y = measure, col = area_name), linewidth = 0.5, alpha = 0.5) +
+    # geom_text_repel(data = cancerReg, aes(y = measure, label = area_name), nudge_x = 1, na.rm = TRUE)+
+
+    geom_text_repel(data = finalValues, aes(
+        x = lastYear,
+        y = lastMA,
+        label = area_name,
+        color=area_name),
+        size = 2.5, 
+        fontface = "bold",
+        nudge_y = 7.6,
+        direction = "y",
+        hjust= -0.8,
+        segment.linetype=2,
+        segment.size = 0.5,
+        segment.curvature=0
+        ) +
+    theme(legend.position = "none") 
+
+# overallPlot <- overallPlot + geom_text_repel(data = finalValues, aes(x = lastYear, y = lastMA, label = area_name), max.overlaps = Inf)
+# overallPlot
+
+
 
 
 ``` 
