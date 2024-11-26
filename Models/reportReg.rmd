@@ -1,0 +1,179 @@
+--- 
+title: "Title Placeholder"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Load in Specific Packages
+```{r}
+library(readr)
+library(tidyr)
+library(dplyr)
+library(here)
+library(lemon)
+library(kableExtra)
+library(ggplot2)
+library(reshape())
+library(hexbin)
+library(data.table)
+library(GGally)
+library(formattable)
+library(viridis)
+library(TTR)
+library(zoo)
+library(ggrepel)
+```
+
+### Load in the data 
+```{r}
+cancerReg <- read.csv("C:\\Users\\romin\\ToyRepo\\Models\\cancerReg.csv") 
+```
+
+
+### Remove Uncessary Data for Analysis
+```{r}
+cancerReg <- cancerReg %>% select(-period,-area_type,-type_definition,-indicator, -upper_confidence_interval, -lower_confidence_interval, -numerator)
+```
+
+### Find Average of All Measures by Year
+```{r}
+avgYearly <- cancerReg %>%
+    group_by(year) %>%
+    mutate(AvgYear = mean(measure, na.rm = TRUE)) %>%
+    select(-area_name, -measure, -area_code)
+```
+
+### Calculate Moving Average for Each Health Board
+```{r}
+movingAvg <- cancerReg %>%
+    group_by(area_name) %>%
+    arrange(year) %>%
+    mutate(MA = cumsum(measure) / row_number())
+
+```
+
+### Find Last Data Points for Data
+```{r}
+finalValues <- movingAvg %>%
+    group_by(area_name) %>%
+    summarise(
+        lastMA = dplyr::last(MA),
+        lastYear=dplyr::last(year)
+    )
+```
+
+
+
+
+### Display Summary of All Data
+```{r}
+inputFile <-"reportReg.pdf"
+ggplot(data=cancerReg, aes(x = year)) +
+    geom_pointline(data= avgYearly, aes(y = AvgYear)) +
+    geom_pointline(data=movingAvg, aes(y=MA, col=area_name))+
+    geom_text_repel(data = finalValues, aes(
+        x = lastYear,
+        y = lastMA,
+        label = area_name,
+        color=area_name),
+        size = 2.5, 
+        fontface = "bold",
+        nudge_y = 20.6,
+        direction = "y",
+        hjust= -0.7,
+        segment.linetype=2,
+        segment.size = 0.5,
+        segment.curvature=0
+        ) +
+    theme(legend.position = "none") 
+qpdf::pdf_rotate_pages(inputFile, pages=4, angle=90)
+```
+```{r}
+
+# ggplot(cancerReg,aes(x=year, y= measure, col=area_name)) + geom_line() + geom_point()
+# ggplot(cancerReg, aes(x=area_name, y=measure, fill=area_name)) + geom_violin()
+# ggparcoord(data= cancerReg, columns = c(), groupColumn = "area_name")
+# ggplot(cancerReg, aes(fill=year, y=measure, x=area_name)) + geom_bar(position = "stack", stat = "identity")
+# ggplot(cancerReg, aes(x = year, y = measure, fill = area_name)) +  geom_area(alpha=0.6 , size=.5, colour="white") +
+#     scale_fill_viridis(discrete = T)
+# ggplot(cancerReg, aes(x = year, y = measure, col = area_name)) +
+#     geom_point(size = 3, position = position_jitter(h = 0.50, w = 0.50), alpha = 0.5) +
+#     geom_smooth(se=FALSE, size = 0.7 )
+
+#--------------------------------------------------
+# cancerReg <- cancerReg %>%
+#     arrange(year) %>%
+#     group_by(area_name) %>%
+#     mutate(MA = rollmean(measure, k = 14, fill = NA, align = "right"))
+# finalValues <- cancerReg %>%
+#     group_by(area_name) %>%
+#     summarise(
+#         lastMA = dplyr::last(measure),
+#         lastYear=dplyr::last(year)
+#     )
+# finalValues
+# options(repr.plot.width =20, repr.plot.height =20) 
+# subData <- cancerReg[seq(0, nrow(cancerReg), 14), ]
+# subData <- subData %>% select(-area_name)
+# print(subData)
+# ggplot(cancerReg, aes(x = year)) +
+#     geom_point(data = subData, aes(x=year, y = MA), color = "black", size = 2) +
+#     geom_line(data = subData, aes(y = MA), colour = "black", linetype = "dashed", size = 0.7) +
+#     geom_pointline(aes(y = measure, col = area_name), linewidth = 0.5, alpha = 0.5) +
+#     # geom_text_repel(data = cancerReg, aes(y = measure, label = area_name), nudge_x = 1, na.rm = TRUE)+
+
+#     geom_text_repel(data = finalValues, aes(
+#         x = lastYear,
+#         y = lastMA,
+#         label = area_name,
+#         color=area_name),
+#         size = 2.5, 
+#         fontface = "bold",
+#         nudge_y = 7.6,
+#         direction = "y",
+#         hjust= -0.8,
+#         segment.linetype=2,
+#         segment.size = 0.5,
+#         segment.curvature=0
+#         ) +
+#     theme(legend.position = "none") 
+#-----------------------------------------------------------------
+# overallPlot <- overallPlot + geom_text_repel(data = finalValues, aes(x = lastYear, y = lastMA, label = area_name), max.overlaps = Inf)
+# overallPlot
+
+
+
+
+``` 
+
+```{r}
+colourCells <- function(values, average){
+    diffVal <- values - average
+    if (diffVal>=0 & diffVal<=20){
+        return(paste0("\\cellcolor{green!," ,round(diffVal/100), "}"))
+    }
+}
+```
+
+
+
+### Summary Table of Data Within Graph 
+```{r}
+healthBoardData <- cancerReg %>%
+    group_by(year) %>%
+    mutate(Percent = measure / sum(measure) * 100)
+healthBoardData <- cancerReg %>% pivot_wider(names_from = year, values_from = measure)
+healthBoardData <- healthBoardData %>%
+    mutate(
+        Average = rowMeans(select(., `2003`:`2020`), na.rm = TRUE)
+    )
+kable(healthBoardData, format = "latex", booktabs = TRUE)
+healthBoardData
+``` 
+
+
+#Note for next time: what I want to do at this point is to show the changing colours as a difference change if its only within a small amount of chaning values then ignore the calues and do not 
+#colour the cell, otherwise red fir a rise and green for a fall 
