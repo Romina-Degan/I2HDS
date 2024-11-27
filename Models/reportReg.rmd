@@ -25,6 +25,7 @@ library(viridis)
 library(TTR)
 library(zoo)
 library(ggrepel)
+library(grid)
 ```
 
 ### Load in the data 
@@ -37,6 +38,12 @@ cancerReg <- read.csv("C:\\Users\\romin\\ToyRepo\\Models\\cancerReg.csv")
 ```{r}
 cancerReg <- cancerReg %>% select(-period,-area_type,-type_definition,-indicator, -upper_confidence_interval, -lower_confidence_interval, -numerator)
 ```
+
+### Display All Data Points
+```{r echo = FALSE, fig.height = 28, fig.width = 20}
+ggplot(data=cancerReg, aes(x=year, y=measure, col=area_name)) + geom_smooth(method="loess",se=FALSE)
+```
+
 
 ### Find Average of All Measures by Year
 ```{r}
@@ -70,7 +77,7 @@ finalValues <- movingAvg %>%
 
 ### Display Summary of All Data
 ```{r}
-inputFile <-"reportReg.pdf"
+
 ggplot(data=cancerReg, aes(x = year)) +
     geom_pointline(data= avgYearly, aes(y = AvgYear)) +
     geom_pointline(data=movingAvg, aes(y=MA, col=area_name))+
@@ -89,63 +96,49 @@ ggplot(data=cancerReg, aes(x = year)) +
         segment.curvature=0
         ) +
     theme(legend.position = "none") 
-qpdf::pdf_rotate_pages(inputFile, pages=4, angle=90)
+
 ```
+
+### Calculate Differences Function
 ```{r}
-
-# ggplot(cancerReg,aes(x=year, y= measure, col=area_name)) + geom_line() + geom_point()
-# ggplot(cancerReg, aes(x=area_name, y=measure, fill=area_name)) + geom_violin()
-# ggparcoord(data= cancerReg, columns = c(), groupColumn = "area_name")
-# ggplot(cancerReg, aes(fill=year, y=measure, x=area_name)) + geom_bar(position = "stack", stat = "identity")
-# ggplot(cancerReg, aes(x = year, y = measure, fill = area_name)) +  geom_area(alpha=0.6 , size=.5, colour="white") +
-#     scale_fill_viridis(discrete = T)
-# ggplot(cancerReg, aes(x = year, y = measure, col = area_name)) +
-#     geom_point(size = 3, position = position_jitter(h = 0.50, w = 0.50), alpha = 0.5) +
-#     geom_smooth(se=FALSE, size = 0.7 )
-
-#--------------------------------------------------
-# cancerReg <- cancerReg %>%
-#     arrange(year) %>%
-#     group_by(area_name) %>%
-#     mutate(MA = rollmean(measure, k = 14, fill = NA, align = "right"))
-# finalValues <- cancerReg %>%
-#     group_by(area_name) %>%
-#     summarise(
-#         lastMA = dplyr::last(measure),
-#         lastYear=dplyr::last(year)
-#     )
-# finalValues
-# options(repr.plot.width =20, repr.plot.height =20) 
-# subData <- cancerReg[seq(0, nrow(cancerReg), 14), ]
-# subData <- subData %>% select(-area_name)
-# print(subData)
-# ggplot(cancerReg, aes(x = year)) +
-#     geom_point(data = subData, aes(x=year, y = MA), color = "black", size = 2) +
-#     geom_line(data = subData, aes(y = MA), colour = "black", linetype = "dashed", size = 0.7) +
-#     geom_pointline(aes(y = measure, col = area_name), linewidth = 0.5, alpha = 0.5) +
-#     # geom_text_repel(data = cancerReg, aes(y = measure, label = area_name), nudge_x = 1, na.rm = TRUE)+
-
-#     geom_text_repel(data = finalValues, aes(
-#         x = lastYear,
-#         y = lastMA,
-#         label = area_name,
-#         color=area_name),
-#         size = 2.5, 
-#         fontface = "bold",
-#         nudge_y = 7.6,
-#         direction = "y",
-#         hjust= -0.8,
-#         segment.linetype=2,
-#         segment.size = 0.5,
-#         segment.curvature=0
-#         ) +
-#     theme(legend.position = "none") 
-#-----------------------------------------------------------------
-# overallPlot <- overallPlot + geom_text_repel(data = finalValues, aes(x = lastYear, y = lastMA, label = area_name), max.overlaps = Inf)
-# overallPlot
+boardAvg <- function(currBoard, currVal,currYear){
+ 
+    currAvgYear <- filter(movingAvg, area_name == currBoard & year == currYear) %>% select(MA)
+    numCurrAvgYear <- gsub("[^0-9.]", "", currAvgYear$MA)
+    numCurrAvgYear <- as.numeric(numCurrAvgYear)
+    diffVal <- currVal - numCurrAvgYear
+    percentVal <- ((diffVal / numCurrAvgYear) * 100)
+    
+    if (percentVal >=3 || percentVal <=-3){
+       print(currBoard)
+       print(currYear)
+       print(percentVal)
+       print("---------------------")
+    } 
 
 
+## Turn these differences into a percentage of how different it is, and if its greatly different return back the percentage value
 
+}
+```
+
+### Calculate Differences
+<!-- Since there are a lot of data points, some have more varying level of differnces, a difference is calulated between the current cummulatve avergae and the current year data point
+to hilight the differences in which years contributed to a change in the value of the average by varying degrees, wether that be an increase or a decrease -->
+```{r}
+healthBoards <- unique(cancerReg$area_name)
+totalYears <- unique(cancerReg$year)
+for (currBoard in healthBoards){
+    for (currYear in totalYears){
+        currVal <- subset(cancerReg, year == currYear & area_name == currBoard)
+        currVal <- select(currVal, -area_code, -area_name, -year)
+        currVal <- as.numeric(currVal)
+        boardAvg(currBoard, currVal, currYear)
+       
+
+    }
+       
+}
 
 ``` 
 
@@ -162,6 +155,7 @@ colourCells <- function(values, average){
 
 ### Summary Table of Data Within Graph 
 ```{r}
+inputFile <-"reportReg.pdf"
 healthBoardData <- cancerReg %>%
     group_by(year) %>%
     mutate(Percent = measure / sum(measure) * 100)
@@ -170,8 +164,12 @@ healthBoardData <- healthBoardData %>%
     mutate(
         Average = rowMeans(select(., `2003`:`2020`), na.rm = TRUE)
     )
-kable(healthBoardData, format = "latex", booktabs = TRUE)
-healthBoardData
+
+kable(healthBoardData, format = "latex", booktabs = TRUE) %>%
+    kable_styling(latex_options = c("striped", "hold_poistion")) %>%
+    row_spec(0, bold = TRUE) %>%
+    kableExtra::landscape()
+qpdf::pdf_rotate_pages(inputFile, pages=4 , angle=90)
 ``` 
 
 
