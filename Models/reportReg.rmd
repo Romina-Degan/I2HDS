@@ -101,6 +101,12 @@ ggplot(data=cancerReg, aes(x = year)) +
 
 ### Calculate Differences Function
 ```{r}
+sigPercent <- data.frame(
+    area_name = character(),
+    year = integer(),
+    percentNum= numeric(),
+    stringsAsFactors = FALSE
+)
 boardAvg <- function(currBoard, currVal,currYear){
  
     currAvgYear <- filter(movingAvg, area_name == currBoard & year == currYear) %>% select(MA)
@@ -110,15 +116,12 @@ boardAvg <- function(currBoard, currVal,currYear){
     percentVal <- ((diffVal / numCurrAvgYear) * 100)
     
     if (percentVal >=3 || percentVal <=-3){
-       print(currBoard)
-       print(currYear)
-       print(percentVal)
-       print("---------------------")
+        sigPercent <- sigPercent %>% add_row(area_name = currBoard, year = currYear, percentNum = round(percentVal, 2))
     } 
-
+    return(sigPercent)
 
 ## Turn these differences into a percentage of how different it is, and if its greatly different return back the percentage value
-
+# WHile the moving average does not provide a direct estimation of the predictied values it still serves as indicator as to what the vale would have looked like in that time frame, and a large deviation from that number means there was a change in data at that time
 }
 ```
 
@@ -128,17 +131,16 @@ to hilight the differences in which years contributed to a change in the value o
 ```{r}
 healthBoards <- unique(cancerReg$area_name)
 totalYears <- unique(cancerReg$year)
-for (currBoard in healthBoards){
-    for (currYear in totalYears){
+for (currBoard in healthBoards) {
+    for (currYear in totalYears) {
         currVal <- subset(cancerReg, year == currYear & area_name == currBoard)
         currVal <- select(currVal, -area_code, -area_name, -year)
         currVal <- as.numeric(currVal)
-        boardAvg(currBoard, currVal, currYear)
-       
-
+        sigPercent<- boardAvg(currBoard, currVal, currYear)
     }
-       
 }
+sigPercent <- sigPercent %>% arrange(desc(year))
+print(sigPercent)
 
 ``` 
 
@@ -156,16 +158,21 @@ colourCells <- function(values, average){
 ### Summary Table of Data Within Graph 
 ```{r}
 inputFile <-"reportReg.pdf"
-healthBoardData <- cancerReg %>%
-    group_by(year) %>%
-    mutate(Percent = measure / sum(measure) * 100)
-healthBoardData <- cancerReg %>% pivot_wider(names_from = year, values_from = measure)
-healthBoardData <- healthBoardData %>%
-    mutate(
-        Average = rowMeans(select(., `2003`:`2020`), na.rm = TRUE)
-    )
+# healthBoardData <- cancerReg %>%
+#     group_by(year) %>%
+#     mutate(Percent = measure / sum(measure) * 100)
+# healthBoardData <- cancerReg %>% pivot_wider(names_from = year, values_from = measure)
+# healthBoardData <- healthBoardData %>%
+#     mutate(
+#         Average = rowMeans(select(., `2003`:`2020`), na.rm = TRUE)
+#     )
 
-kable(healthBoardData, format = "latex", booktabs = TRUE) %>%
+sigPercentWide <- sigPercent %>% pivot_wider(
+    names_from = year,
+    values_from = percentNum
+)
+print(sigPercentWide)
+kable(sigPercentWide, format = "latex", booktabs = TRUE) %>%
     kable_styling(latex_options = c("striped", "hold_poistion")) %>%
     row_spec(0, bold = TRUE) %>%
     kableExtra::landscape()
