@@ -4,28 +4,30 @@ output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, message=FALSE, warning=FALSE)
 ```
 
 ### Load in Specific Packages
 ```{r}
-library(readr)
-library(tidyr)
-library(dplyr)
-library(here)
-library(lemon)
-library(kableExtra)
-library(ggplot2)
-library(reshape())
-library(hexbin)
-library(data.table)
-library(GGally)
-library(formattable)
-library(viridis)
-library(TTR)
-library(zoo)
-library(ggrepel)
-library(grid)
+suppressWarnings({
+    library(readr)
+    library(tidyr)
+    library(dplyr)
+    library(here)
+    library(lemon)
+    library(kableExtra)
+    library(ggplot2)
+    library(reshape())
+    library(hexbin)
+    library(data.table)
+    library(GGally)
+    library(formattable)
+    library(viridis)
+    library(TTR)
+    library(zoo)
+    library(ggrepel)
+    library(grid)
+})
 ```
 
 ### Load in the data 
@@ -40,8 +42,8 @@ cancerReg <- cancerReg %>% select(-period,-area_type,-type_definition,-indicator
 ```
 
 ### Display All Data Points
-```{r echo = FALSE, fig.height = 28, fig.width = 20}
-ggplot(data=cancerReg, aes(x=year, y=measure, col=area_name)) + geom_smooth(method="loess",se=FALSE)
+```{r echo = FALSE, fig.height = 15, fig.width = 20}
+ggplot(data=cancerReg, aes(x=year, y=measure, col=area_name)) + geom_smooth(method="loess",se=FALSE) + theme(axis.text.x = element_text(size=30), axis.text.y = element_text(size=30), axis.title = element_text(size=40))
 ```
 
 
@@ -77,70 +79,72 @@ finalValues <- movingAvg %>%
 
 ### Display Summary of All Data
 ```{r}
-
-ggplot(data=cancerReg, aes(x = year)) +
-    geom_pointline(data= avgYearly, aes(y = AvgYear)) +
-    geom_pointline(data=movingAvg, aes(y=MA, col=area_name))+
-    geom_text_repel(data = finalValues, aes(
-        x = lastYear,
-        y = lastMA,
-        label = area_name,
-        color=area_name),
-        size = 2.5, 
-        fontface = "bold",
-        nudge_y = 20.6,
-        direction = "y",
-        hjust= -0.7,
-        segment.linetype=2,
-        segment.size = 0.5,
-        segment.curvature=0
+    ggplot(data = cancerReg, aes(x = year)) +
+        geom_pointline(data = avgYearly, aes(y = AvgYear)) +
+        geom_pointline(data = movingAvg, aes(y = MA, col = area_name)) +
+        geom_text_repel(
+            data = finalValues, aes(
+                x = lastYear,
+                y = lastMA,
+                label = area_name,
+                color = area_name
+            ),
+            size = 2.5,
+            fontface = "bold",
+            nudge_y = 20.6,
+            direction = "y",
+            hjust = -0.7,
+            segment.linetype = 2,
+            segment.size = 0.5,
+            segment.curvature = 0
         ) +
-    theme(legend.position = "none") 
+        theme(legend.position = "none")
 
 ```
 
 ### Calculate Differences Function
 ```{r}
-sigPercent <- data.frame(
-    area_name = character(),
-    year = integer(),
-    percentNum= numeric(),
-    stringsAsFactors = FALSE
-)
-boardAvg <- function(currBoard, currVal,currYear){
- 
-    currAvgYear <- filter(movingAvg, area_name == currBoard & year == currYear) %>% select(MA)
-    numCurrAvgYear <- gsub("[^0-9.]", "", currAvgYear$MA)
-    numCurrAvgYear <- as.numeric(numCurrAvgYear)
-    diffVal <- currVal - numCurrAvgYear
-    percentVal <- ((diffVal / numCurrAvgYear) * 100)
-    
-    if (percentVal >=3 || percentVal <=-3){
-        sigPercent <- sigPercent %>% add_row(area_name = currBoard, year = currYear, percentNum = round(percentVal, 2))
-    } 
-    return(sigPercent)
 
-## Turn these differences into a percentage of how different it is, and if its greatly different return back the percentage value
-# WHile the moving average does not provide a direct estimation of the predictied values it still serves as indicator as to what the vale would have looked like in that time frame, and a large deviation from that number means there was a change in data at that time
-}
+    sigPercent <- data.frame(
+        area_name = character(),
+        year = integer(),
+        percentNum = numeric(),
+        stringsAsFactors = FALSE
+    )
+    boardAvg <- function(currBoard, currVal, currYear) {
+        currAvgYear <- filter(movingAvg, area_name == currBoard & year == currYear) %>% select(MA)
+        numCurrAvgYear <- gsub("[^0-9.]", "", currAvgYear$MA)
+        numCurrAvgYear <- as.numeric(numCurrAvgYear)
+        diffVal <- currVal - numCurrAvgYear
+        percentVal <- ((diffVal / numCurrAvgYear) * 100)
+
+        if (percentVal >= 3 || percentVal <= -3) {
+            sigPercent <- sigPercent %>% add_row(area_name = currBoard, year = currYear, percentNum = round(percentVal, 2))
+        }
+        return(sigPercent)
+
+        # WHile the moving average does not provide a direct estimation of the predictied values it still serves as indicator as to what the vale would have looked like in that time frame, and a large deviation from that number means there was a change in data at that time
+    }
+
 ```
 
 ### Calculate Differences
 <!-- Since there are a lot of data points, some have more varying level of differnces, a difference is calulated between the current cummulatve avergae and the current year data point
 to hilight the differences in which years contributed to a change in the value of the average by varying degrees, wether that be an increase or a decrease -->
 ```{r}
-healthBoards <- unique(cancerReg$area_name)
-totalYears <- unique(cancerReg$year)
-for (currBoard in healthBoards) {
-    for (currYear in totalYears) {
-        currVal <- subset(cancerReg, year == currYear & area_name == currBoard)
-        currVal <- select(currVal, -area_code, -area_name, -year)
-        currVal <- as.numeric(currVal)
-        sigPercent<- boardAvg(currBoard, currVal, currYear)
+
+    healthBoards <- unique(cancerReg$area_name)
+    totalYears <- unique(cancerReg$year)
+    for (currBoard in healthBoards) {
+        for (currYear in totalYears) {
+            currVal <- subset(cancerReg, year == currYear & area_name == currBoard)
+            currVal <- select(currVal, -area_code, -area_name, -year)
+            currVal <- as.numeric(currVal)
+            sigPercent <- boardAvg(currBoard, currVal, currYear)
+        }
     }
-}
-sigPercent <- sigPercent %>% arrange(desc(year))
-print(sigPercent)
+    sigPercent <- sigPercent %>% arrange(desc(year))
+   
 
 ``` 
 
@@ -157,26 +161,34 @@ colourCells <- function(values, average){
 
 ### Summary Table of Data Within Graph 
 ```{r}
-inputFile <-"reportReg.pdf"
-# healthBoardData <- cancerReg %>%
-#     group_by(year) %>%
-#     mutate(Percent = measure / sum(measure) * 100)
-# healthBoardData <- cancerReg %>% pivot_wider(names_from = year, values_from = measure)
-# healthBoardData <- healthBoardData %>%
-#     mutate(
-#         Average = rowMeans(select(., `2003`:`2020`), na.rm = TRUE)
-#     )
+
+# inputFile <- "reportReg.pdf"
+# sigPercentWide_colored <- sigPercentWide %>%
+#     mutate(across(everything(), ~ cell_spec(.,
+#                                              color = ifelse(. < 0, "red", "black"),
+#                                              background = ifelse(. < 0, "lightpink", "white"))))
+
 
 sigPercentWide <- sigPercent %>% pivot_wider(
     names_from = year,
     values_from = percentNum
 )
-print(sigPercentWide)
-kable(sigPercentWide, format = "latex", booktabs = TRUE) %>%
-    kable_styling(latex_options = c("striped", "hold_poistion")) %>%
+# sigPercentWide <- sigPercentWide %>% mutate(
+#   across(-1,
+
+#       ~ cell_spec(., color = ifelse(is.na(.), "black", ifelse(. < 0, "green", "red")))
+#   )
+#   )
+# sigPercentWide <- sigPercentWide %>% mutate(across(everything(), ~ replace_na(., 0)))
+kable(sigPercentWide, format = "latex", booktabs = TRUE, longtable=TRUE) %>%
+    kable_styling(latex_options = c("striped", "hold_postion")) %>%
     row_spec(0, bold = TRUE) %>%
-    kableExtra::landscape()
-qpdf::pdf_rotate_pages(inputFile, pages=4 , angle=90)
+     kableExtra::landscape()
+
+
+
+# qpdf::pdf_rotate_pages(inputFile, pages = 4, angle = 90)
+
 ``` 
 
 
