@@ -1,54 +1,112 @@
 --- 
-title: "Title Placeholder"
-output: pdf_document
+title: "Analysis of Temporal Trends in Cancer Registry Data in NHS Scotland "
+output: 
+  pdf_document:
+    toc: true
 ---
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, message=FALSE, warning=FALSE)
 ```
 
+
+# Introduction
+## 1.1 Background
+Understanding trends within a countries cancer registry data provided an essential understanding for health budget allocation and informed public health polices,
+targeted at reducing the incidence of certain cancers. Cancer diagnoses places significant strain on not only a patients life, but on the health care budget allocated. 
+This form of stress on an economies healthcare budget is known as the cancer burden. The larger the cancer burden the harder the economy must work to meet the growing 
+demands placed on the healthcare system to provide the patients with the intensive care required. To illustrate this problem we can examine how  
+, Europe currently has the highest health expenditure
+on cancer treatment also has the highest rate of deaths in a working age (30-69) due to cancer. Despite increased funding, quality healthcare and developing research into improving 
+cancer care, providing the correct care in a timely manner that ensures cancer is caught earlier to prevent increased costs on a health care system still proves an issue. This is 
+where maintaining and updating health statistics is important to inform policy makers on the changing needs amid rising cases. 
+
+
+# Methods
+## Data Loading/Cleansing
+First the relevant library packages are installed, there are som typical boilerplate packages. Of note to this paticular report, are the packages:
+
+- Lemon - provides functionalities for geom_pointline
+- kableExtra - provides functionlities to make a table in R Markdown
+- Zoo - provides mathematical functions
+- ggrepel - provides functionalities to ensure that text labels dont overalp on graphs
 ### Load in Specific Packages
-```{r}
+```{r Load Libraries}
 suppressWarnings({
-    library(readr)
-    library(tidyr)
-    library(dplyr)
-    library(here)
-    library(lemon)
-    library(kableExtra)
-    library(ggplot2)
-    library(reshape())
-    library(hexbin)
-    library(data.table)
-    library(GGally)
-    library(formattable)
-    library(viridis)
-    library(TTR)
-    library(zoo)
-    library(ggrepel)
-    library(grid)
+library(readr)
+library(tidyr)
+library(dplyr)
+library(here)
+library(lemon)
+library(kableExtra)
+library(ggplot2)
+library(data.table)
+
+library(zoo)
+library(ggrepel)
 })
 ```
 
+Once all the relevant libraries are loaded in, the data is read in from a local directory and saved into a dataframe. In this case 
+the dataframe that will be used for all data manipulation of the entire cancer registry data will be named *cancerReg* 
+
 ### Load in the data 
-```{r}
-cancerReg <- read.csv("C:\\Users\\romin\\ToyRepo\\Models\\cancerReg.csv") 
+```{r Read in the Data}
+cancerReg <- read.csv("C:\\Users\\romin\\ToyRepo\\Models\\cancerReg.csv")
+cancerRegTable1 <- cancerReg[c(1,2,3,4,5,8)]
+cancerRegTable2 <- cancerReg[c(6,9,10,11)]
+kable(head(cancerRegTable1))
+kable(head(cancerRegTable2))
 ```
 
+
+Not all the data provided in the inital dataframe is required for further analysis and this line of code depicts the values in which we will not need.
+These values have been removed to make the data cleaner and easier to manipulate. A notable exclusion is the "numerator" column, this column is the 
+raw value of the amount of people under a specific health board in a specific time frame are contained in the cancer registry. This was due to the fact 
+that the "numerator" values were not standardised across different health boards, and if the raw values were taken, it could lead to false conclusions over the data.
+
+Especially with the variance in  population age between the healthboards, the largest difference being between Dumfries and Galloway with over 65's representing 29% of their population 
+compared to Grampian's 20%. As noted in the Background section most new incidence of cancer come from an aging populaion. So for the sake of genralisability of results, a standardised value 
+such as the measure is used throughout the interperetations and calulcations. The measure value itself is not standardised to a fine degree, but this will be further discussed in the results section
 
 ### Remove Uncessary Data for Analysis
-```{r}
-cancerReg <- cancerReg %>% select(-period,-area_type,-type_definition,-indicator, -upper_confidence_interval, -lower_confidence_interval, -numerator)
+```{r Remove Columns}
+cancerReg <- cancerReg %>% select(
+    -period, -area_type, -type_definition, -indicator,
+    -upper_confidence_interval, -lower_confidence_interval, -numerator
+)
 ```
 
+## Visual Representation of All Values in Cancer Registry Data
+To understand how to best analyse the data, a general overview is helpful to aid in this. This portion of the assignemnt took the longest 
+since it was difficult to map for all 14 healthboards in a clear and conscise manner without cluttering the plot. especially when there such drastic changes in the measure 
+variable between time periods. Initally, a variation of plots such as stacked area chart and density plots were experimented with but they all proved too limited in their 
+visual represnations as overlapping data, and the jumping of values were often lost in favour of generalising the data points. Therefore, the descion was made to
+use a scatter plot with lines intersecting the points to display the change in gradient of the line for different time periods.   
+
 ### Display All Data Points
-```{r echo = FALSE, fig.height = 15, fig.width = 20}
-ggplot(data=cancerReg, aes(x=year, y=measure, col=area_name)) + geom_smooth(method="loess",se=FALSE) + theme(axis.text.x = element_text(size=30), axis.text.y = element_text(size=30), axis.title = element_text(size=40))
+```{r Graph Of Raw Data, echo = FALSE, fig.height = 20, fig.width = 25}
+ggplot(data = cancerReg, aes(x = year, y = measure, col = area_name)) +
+    geom_smooth(method = "loess", se = FALSE) +
+    theme(
+
+        legend.legend.box.spacing = unit(5.0,"cm"),
+        legend.title = element_text(size=25),
+        legend.text=element_text(size=30),
+        legend.key.size = unit(2.0,"cm"),
+        axis.text.x = element_text(size = 30),
+        axis.text.y = element_text(size = 30), 
+        axis.title = element_text(size = 40)
+    )
 ```
+The function *geom_smooth()* was used to account for the overplotting that occured for the majority of the healthboards and time periods. This function was paticulary useful as it 
+creates smoother lines between the physical data points plotting the measure a specific health board registered for that paticular year. As seen in the plot, most of the time healthboards
+will constitently register within ± 20 cases, causing significant overplotting for the multiple healtboards that didnt exhibt drastic changes. However, this function proves very useful
 
 
 ### Find Average of All Measures by Year
-```{r}
+```{r Average of All HealthBoards}
 avgYearly <- cancerReg %>%
     group_by(year) %>%
     mutate(AvgYear = mean(measure, na.rm = TRUE)) %>%
@@ -56,7 +114,7 @@ avgYearly <- cancerReg %>%
 ```
 
 ### Calculate Moving Average for Each Health Board
-```{r}
+```{r Calculate Moving Average For All Health Boards}
 movingAvg <- cancerReg %>%
     group_by(area_name) %>%
     arrange(year) %>%
@@ -65,7 +123,7 @@ movingAvg <- cancerReg %>%
 ```
 
 ### Find Last Data Points for Data
-```{r}
+```{r Return Last Data Points in Moving Average}
 finalValues <- movingAvg %>%
     group_by(area_name) %>%
     summarise(
@@ -78,10 +136,11 @@ finalValues <- movingAvg %>%
 
 
 ### Display Summary of All Data
-```{r}
+```{r Graph of Calculated Averages}
+    options(repr.plot.width = 60, repr.plot.height =5) 
     ggplot(data = cancerReg, aes(x = year)) +
         geom_pointline(data = avgYearly, aes(y = AvgYear)) +
-        geom_pointline(data = movingAvg, aes(y = MA, col = area_name)) +
+        geom_line(data = movingAvg, aes(y = MA, col = area_name)) +
         geom_text_repel(
             data = finalValues, aes(
                 x = lastYear,
@@ -91,19 +150,21 @@ finalValues <- movingAvg %>%
             ),
             size = 2.5,
             fontface = "bold",
-            nudge_y = 20.6,
+            nudge_x = 5.6,
             direction = "y",
-            hjust = -0.7,
+            hjust = 0.7,
             segment.linetype = 2,
             segment.size = 0.5,
-            segment.curvature = 0
+            segment.curvature = 0,
+            max.overlaps = Inf
         ) +
-        theme(legend.position = "none")
+
+        theme(legend.position = "none", plot.margin = margin(2,2,2,2))
 
 ```
 
 ### Calculate Differences Function
-```{r}
+```{r Calculate Current Point Against Moving Average}
 
     sigPercent <- data.frame(
         area_name = character(),
@@ -129,9 +190,8 @@ finalValues <- movingAvg %>%
 ```
 
 ### Calculate Differences
-<!-- Since there are a lot of data points, some have more varying level of differnces, a difference is calulated between the current cummulatve avergae and the current year data point
-to hilight the differences in which years contributed to a change in the value of the average by varying degrees, wether that be an increase or a decrease -->
-```{r}
+
+```{r Calculate Differences from Current Point to Moving Average}
 
     healthBoards <- unique(cancerReg$area_name)
     totalYears <- unique(cancerReg$year)
@@ -148,19 +208,7 @@ to hilight the differences in which years contributed to a change in the value o
 
 ``` 
 
-```{r}
-colourCells <- function(values, average){
-    diffVal <- values - average
-    if (diffVal>=0 & diffVal<=20){
-        return(paste0("\\cellcolor{green!," ,round(diffVal/100), "}"))
-    }
-}
-```
-
-
-
-### Summary Table of Data Within Graph 
-```{r}
+```{r Create Table of Results}
 
 # inputFile <- "reportReg.pdf"
 # sigPercentWide_colored <- sigPercentWide %>%
@@ -173,6 +221,8 @@ sigPercentWide <- sigPercent %>% pivot_wider(
     names_from = year,
     values_from = percentNum
 )
+colnames(sigPercentWide)
+sigPercenFinal <- rbind(sigPercentWide, data.frame(area_name = "Total", t(colSums(sigPercentWide[,-1]))))
 # sigPercentWide <- sigPercentWide %>% mutate(
 #   across(-1,
 
@@ -194,3 +244,5 @@ kable(sigPercentWide, format = "latex", booktabs = TRUE, longtable=TRUE) %>%
 
 #Note for next time: what I want to do at this point is to show the changing colours as a difference change if its only within a small amount of chaning values then ignore the calues and do not 
 #colour the cell, otherwise red fir a rise and green for a fall 
+#<!-- Since there are a lot of data points, some have more varying level of differnces, a difference is calulated between the current cummulatve avergae and the current year data point
+#to hilight the differences in which years contributed to a change in the value of the average by varying degrees, wether that be an increase or a decrease -->
