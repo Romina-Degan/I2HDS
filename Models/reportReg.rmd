@@ -31,6 +31,7 @@ First the relevant library packages are installed, there are som typical boilerp
 - kableExtra - provides functionlities to make a table in R Markdown
 - Zoo - provides mathematical functions
 - ggrepel - provides functionalities to ensure that text labels dont overalp on graphs
+
 ### Load in Specific Packages
 ```{r Load Libraries}
 suppressWarnings({
@@ -53,22 +54,33 @@ the dataframe that will be used for all data manipulation of the entire cancer r
 
 ### Load in the data 
 ```{r Read in the Data}
+# Load in data
 cancerReg <- read.csv("C:\\Users\\romin\\ToyRepo\\Models\\cancerReg.csv")
+
+# Split the data, so structure can be seen better
 cancerRegTable1 <- cancerReg[c(1,2,3,4,5,8)]
-cancerRegTable2 <- cancerReg[c(6,9,10,11)]
+cancerRegTable2 <- cancerReg[c(6, 9, 10, 11)]
+
 kable(head(cancerRegTable1))
+#Continuation of table 1, too many columns to display in one table
 kable(head(cancerRegTable2))
 ```
 
+\
+\
+\
+\
+\
+Not all the data provided in the initial data frame is required for further analysis and this line of code depicts the values in which will not be needed.
+These values have been removed to make the data cleaner and easier to manipulate. A notable exclusion is the "numerator" column. This column is the 
+raw value of the amount of people registered under that specific health board in the cancer registry. This value could not be used as a reliable indicator of  
+the rate of patients in the cancer registry by a specific health board, due to its lack of standardisation.
 
-Not all the data provided in the inital dataframe is required for further analysis and this line of code depicts the values in which we will not need.
-These values have been removed to make the data cleaner and easier to manipulate. A notable exclusion is the "numerator" column, this column is the 
-raw value of the amount of people under a specific health board in a specific time frame are contained in the cancer registry. This was due to the fact 
-that the "numerator" values were not standardised across different health boards, and if the raw values were taken, it could lead to false conclusions over the data.
-
-Especially with the variance in  population age between the healthboards, the largest difference being between Dumfries and Galloway with over 65's representing 29% of their population 
-compared to Grampian's 20%. As noted in the Background section most new incidence of cancer come from an aging populaion. So for the sake of genralisability of results, a standardised value 
-such as the measure is used throughout the interperetations and calulcations. The measure value itself is not standardised to a fine degree, but this will be further discussed in the results section
+Standardisation is essential when looking at larger population data, especially with an aging population such as Scotland's. Certain disease such as cancers
+are more prevalent in an aging population as seen with (insert reference). This is a significant factor in this study as Scotland is made up of several rural areas,
+in which their age distribution is significantly higher towards an elderly population. Specifically, between the more rural health boards such as NHS Orkney, NHS Ayrshire compares 
+against more urban health boards such as NHS Greater Glasgow and Clyde and NHS Grampian. The biggest gap in age different is between Glasgow City and Dumfries and Galloway 
+with a 14% to 27% difference respectively. Hence the importance of standardising the numerator value across the health boards, into a variable such as the measure column. 
 
 ### Remove Uncessary Data for Analysis
 ```{r Remove Columns}
@@ -79,14 +91,18 @@ cancerReg <- cancerReg %>% select(
 ```
 
 ## Visual Representation of All Values in Cancer Registry Data
-To understand how to best analyse the data, a general overview is helpful to aid in this. This portion of the assignemnt took the longest 
-since it was difficult to map for all 14 healthboards in a clear and conscise manner without cluttering the plot. especially when there such drastic changes in the measure 
-variable between time periods. Initally, a variation of plots such as stacked area chart and density plots were experimented with but they all proved too limited in their 
-visual represnations as overlapping data, and the jumping of values were often lost in favour of generalising the data points. Therefore, the descion was made to
-use a scatter plot with lines intersecting the points to display the change in gradient of the line for different time periods.   
+To understand how to best analyse the data, we first require an understanding of what the data represents. Each health board every year submitted a raw value in
+the form of the numerator and the measure was then calculated against an age-sex standardisation method. After the data was adjusted, the differences in measure values 
+among health boards were minimal, therefore there was a large amount of health boards falling into the same value.This caused a major issue with overplotting 
+across different health boards. To try and overcome the issue of overplotting, a variety of visual graphs were tested. Such as density plots, heatmaps and stacked area charts, 
+but they all proved too limited in showing the drastic jumps some health boards exhibited in certain time frames.
+
+This portion of the assignment took the longest due to the difficulty of clearly mapping all 14 health boards over an extended period. 
+Especially when there are such drastic changes in the measure, often these sharp changes in the measure value were lost in favour of generalising the data.
+Therefore, the decision was made to use a scatter and line plot with varying functions designed to smoothen the lines between certain points where they seemingly overlap consistently. 
 
 ### Display All Data Points
-```{r Graph Of Raw Data, echo = FALSE, fig.height = 20, fig.width = 25}
+```{r Graph Of Cancer Reg Data, echo = FALSE, fig.height = 20, fig.width = 25}
 ggplot(data = cancerReg, aes(x = year, y = measure, col = area_name)) +
     geom_smooth(method = "loess", se = FALSE) +
     theme(
@@ -100,21 +116,45 @@ ggplot(data = cancerReg, aes(x = year, y = measure, col = area_name)) +
         axis.title = element_text(size = 40)
     )
 ```
-The function *geom_smooth()* was used to account for the overplotting that occured for the majority of the healthboards and time periods. This function was paticulary useful as it 
-creates smoother lines between the physical data points plotting the measure a specific health board registered for that paticular year. As seen in the plot, most of the time healthboards
-will constitently register within ± 20 cases, causing significant overplotting for the multiple healtboards that didnt exhibt drastic changes. However, this function proves very useful
 
+The function *geom_smooth()* was used to account for the overplotting that occurred for the majority of the health boards in their respective time periods.
+This function was particularly useful as it creates smoother transition lines between the physical dots representing the measure value across the years.
+For the overall simplicity of the graph, the physical dots representing the data have been omitted, to ensure a clear overview of the data.
+
+The data itself shows clear jumps between measure values between the health boards. To better understand the scale by which the measure values differ, 
+an overall mean will be calculated for all values, while a cummulative moving average will be used to calculate the avergae of a specific health board.The aim is to 
+quantify how a health board's cancer registry data differs from the overall average from 2003-2020. To analyse this relationship, the group moving average is 
+calculated against an individual health board. In calculating this, we can numerically evaluate how the values have changed. 
+While also investigating if a particular year showed an increase/decrease of patients in the cancer registry. 
+
+## Calculate Overall and Moving Average for All Health Boards
 
 ### Find Average of All Measures by Year
 ```{r Average of All HealthBoards}
+# Total Average across all health boards, grouped by the year
 avgYearly <- cancerReg %>%
     group_by(year) %>%
+    #Add a row showing the average number for the measure from all healthboards in a year
     mutate(AvgYear = mean(measure, na.rm = TRUE)) %>%
     select(-area_name, -measure, -area_code)
 ```
 
+Since this report focuses on time series data, it would be appropriate to use time series methods to analyse the effects over the years accurately. 
+Given the vast amount of historical data provided, it was important to consider how to incorporate the historical data into the analysis.
+While most moving average models place emphasis and weightings on more recent data points, the cumulative moving average considers 
+most historical data and provides the means of examining long term trends for patients within the cancer registry.
+
+For the purposes of this report, we aim to explore fluctuations in registry data over the years, particularly
+how the pandemic has impacted the cancer registry. We are interested in observing the increase/decrease in 
+cancer trends to then explore if the pandemic did cause an effect on registry data, or if there were underlying trends
+in previous years that have exacerbated the status quo. Therefore, the decision was made to use the cumulative average, to maintain 
+the weighting that historical data would have on the overall value, so that a clearer distinction could be made on each year’s trend in cancer registry data. 
+
+
+
 ### Calculate Moving Average for Each Health Board
-```{r Calculate Moving Average For All Health Boards}
+```{r Calculate Moving Average For Individual Health Boards}
+# Calculate a cummulate moving average for individual healthboards
 movingAvg <- cancerReg %>%
     group_by(area_name) %>%
     arrange(year) %>%
@@ -122,8 +162,12 @@ movingAvg <- cancerReg %>%
 
 ```
 
+
+
 ### Find Last Data Points for Data
 ```{r Return Last Data Points in Moving Average}
+#Used for asethetic purposes only
+#Code used to assign easier to read labels on graph 
 finalValues <- movingAvg %>%
     group_by(area_name) %>%
     summarise(
@@ -163,9 +207,23 @@ finalValues <- movingAvg %>%
 
 ```
 
+The overall average is calculated and plotted as a scatter plot over a line plot of the individual health board averages. The lines that were previously plotted
+on the overview of the data have been smoothed to show the uptick in trends over time. Notably, there are few health boards that have consistently 
+remained within the overall average, most of these are contained within the middle of the labels. As the labels of the graph move further out, we see stronger variations
+in the measure value over time. Specifically, NHS Western Isles, NHS Orkney and NHS Shetland. These health boards consistently have shown varying levels
+of fluctuation over the years. Without using the cumulative summation to calculate these averages, their historical data would have been lost. 
+
+The moving average itself saw a slight uptick in cases during 2006-2008 and the cases yo-yoed up and down for the next 7 years until there was a sharp decline. 
+This decline shows that during 2019, across all health boards the measure of patients in the cancer registry fell. To quantify this value we can calculate, the differences 
+between the cumulative moving average and the overall average. The difference provided would show the rise (positive difference) or fall (negative difference) in patients
+in the cancer registry, against the national average. Providing a clear indicator of trends over time, to see if the pandemic attributed to a change in cancer registry data, or 
+if there was already a pattern of change before the pandemic.
+
+## Quantify Differences Between the Averages
+
 ### Calculate Differences Function
 ```{r Calculate Current Point Against Moving Average}
-
+    #Declare data frame to hold percentage values
     sigPercent <- data.frame(
         area_name = character(),
         year = integer(),
@@ -173,76 +231,99 @@ finalValues <- movingAvg %>%
         stringsAsFactors = FALSE
     )
     boardAvg <- function(currBoard, currVal, currYear) {
+        #Retrive current average for a specific year 
         currAvgYear <- filter(movingAvg, area_name == currBoard & year == currYear) %>% select(MA)
         numCurrAvgYear <- gsub("[^0-9.]", "", currAvgYear$MA)
         numCurrAvgYear <- as.numeric(numCurrAvgYear)
+        #Calculate difference
         diffVal <- currVal - numCurrAvgYear
         percentVal <- ((diffVal / numCurrAvgYear) * 100)
-
+        # Defined a threshold, where the difference percentage would be of interest
         if (percentVal >= 3 || percentVal <= -3) {
-            sigPercent <- sigPercent %>% add_row(area_name = currBoard, year = currYear, percentNum = round(percentVal, 2))
+            sigPercent <- sigPercent %>% add_row(
+                area_name = currBoard,
+                year = currYear, 
+                percentNum = round(percentVal, 2)
+            )
         }
         return(sigPercent)
 
-        # WHile the moving average does not provide a direct estimation of the predictied values it still serves as indicator as to what the vale would have looked like in that time frame, and a large deviation from that number means there was a change in data at that time
+        
     }
 
 ```
 
-### Calculate Differences
 
+While the moving average does not provide a direct estimation of the predicted values, it still serves as an indicator of what the value would have looked like in that time frame. 
+A large deviation from that number means there was a change in the previous trend of data. To investigate such a change, we can calculate the difference in the value. Since 
+the cumulative summation considered historical data, it can provide an estimation of how different that value is from the overall trend. In this case the trend is the overall 
+average. It would be typical to see the value of the measure fluctuate slightly over time and therefore this difference would not be considered as a cause for interest.
+
+A value had to be determined to capture meaningful changes in the data. The difference was expressed as a percentage, with 100% indicating
+that the current point difference matched the average cases for that year, and 0% indicated no deviation from the point. Looking at the graph, meaningful
+deviations meant any case that was ± 30 cases, this translates to a 3% change from the overall average value. 3% was used as the threshold, any health board for a specific year that
+encountered a change of at least 3% of the overall average was saved into another data frame, to have the contents further analysed.
+
+
+### Calculate Differences
 ```{r Calculate Differences from Current Point to Moving Average}
 
     healthBoards <- unique(cancerReg$area_name)
     totalYears <- unique(cancerReg$year)
     for (currBoard in healthBoards) {
         for (currYear in totalYears) {
+            
             currVal <- subset(cancerReg, year == currYear & area_name == currBoard)
             currVal <- select(currVal, -area_code, -area_name, -year)
             currVal <- as.numeric(currVal)
+            #Call difference function
             sigPercent <- boardAvg(currBoard, currVal, currYear)
         }
     }
     sigPercent <- sigPercent %>% arrange(desc(year))
+
    
 
 ``` 
 
+##Disp
+
 ```{r Create Table of Results}
-
-# inputFile <- "reportReg.pdf"
-# sigPercentWide_colored <- sigPercentWide %>%
-#     mutate(across(everything(), ~ cell_spec(.,
-#                                              color = ifelse(. < 0, "red", "black"),
-#                                              background = ifelse(. < 0, "lightpink", "white"))))
-
 
 sigPercentWide <- sigPercent %>% pivot_wider(
     names_from = year,
     values_from = percentNum
 )
-colnames(sigPercentWide)
-sigPercenFinal <- rbind(sigPercentWide, data.frame(area_name = "Total", t(colSums(sigPercentWide[,-1]))))
-# sigPercentWide <- sigPercentWide %>% mutate(
-#   across(-1,
 
-#       ~ cell_spec(., color = ifelse(is.na(.), "black", ifelse(. < 0, "green", "red")))
-#   )
-#   )
-# sigPercentWide <- sigPercentWide %>% mutate(across(everything(), ~ replace_na(., 0)))
-kable(sigPercentWide, format = "latex", booktabs = TRUE, longtable=TRUE) %>%
-    kable_styling(latex_options = c("striped", "hold_postion")) %>%
+sigPercentWide <- sigPercentWide %>% replace(is.na(.), 0)
+
+# Add reference to statology
+sigPercentTotal <- sigPercentWide %>%
+    bind_rows(summarise(
+        ., across(where(is.numeric), sum),
+        across(where(is.character), ~"Total")
+    ))
+
+kable(sigPercentTotal, format = "latex", booktabs = TRUE, longtable = TRUE) %>%
+    kable_styling(latex_options = c("striped", "hold_position")) %>%
     row_spec(0, bold = TRUE) %>%
-     kableExtra::landscape()
-
-
-
-# qpdf::pdf_rotate_pages(inputFile, pages = 4, angle = 90)
+    column_spec(1, "2cm") %>%
+    
+    row_spec(15, bold = TRUE) %>%
+    kableExtra::landscape()
 
 ``` 
 
+In line with the previous graph of the data points, we see that the drop in the graph was between 2019 and 2020. During those time periods 9/14 health boards saw a decrease in 
+the overall number of patients in their respective cancer registries. It’s important to note at this point that the data collected come from 3-year aggregates. Any data provided from 
+a specific year also includes data from the previous years. Therefore, the 2019 data is part of a 3-year aggregate containig data from 2018-2020. This form of collecting data as an aggregate 
+was unclear. In the definition and dictionary of the data provided on the PHS website, it states that to accurately represent the true value of a year’s cancer registry data they require the next 
+years data. This purpose was unclear. In light of this information, we can assume that the data from 2019 and 2020 come from a time during the pandemic and further analyse what the 
+percentage changes mean for each of the health boards. 
 
-#Note for next time: what I want to do at this point is to show the changing colours as a difference change if its only within a small amount of chaning values then ignore the calues and do not 
-#colour the cell, otherwise red fir a rise and green for a fall 
-#<!-- Since there are a lot of data points, some have more varying level of differnces, a difference is calulated between the current cummulatve avergae and the current year data point
-#to hilight the differences in which years contributed to a change in the value of the average by varying degrees, wether that be an increase or a decrease -->
+The pandemic showed a clear change amongst all health boards, in addition to another year of interest in 2016 that say a total of 20% cut in cancer registry data. 2016 was a notable year 
+for Scotlands economy and caused a shift in Scotlands work force, this change will be further discussed in the Results section.
+
+There seems to be a consistent number of health boards that contribute to these changes, especially NHS Western Isles, NHS Orkney and NHS Shetland. These 
+health boards experienced a deviation almost every year, this doesn’t necessarily indicate a worsening state, as lower cancer rates will also be flagged as a change from the normal. If a 
+specific health board continuously has changes from the average in a negative direction it could indicate a healthier population.  
