@@ -3,6 +3,7 @@ title: "Analysis of Temporal Trends in Cancer Registry Data in NHS Scotland "
 output: 
   pdf_document:
     toc: true
+
 ---
 
 
@@ -24,7 +25,7 @@ where maintaining and updating health statistics is important to inform policy m
 
 
 # Methods
-## Data Loading/Cleansing
+## 2.1 Data Loading/Cleansing
 First the relevant library packages are installed, there are som typical boilerplate packages. Of note to this paticular report, are the packages:
 
 - Lemon - provides functionalities for geom_pointline
@@ -32,7 +33,7 @@ First the relevant library packages are installed, there are som typical boilerp
 - Zoo - provides mathematical functions
 - ggrepel - provides functionalities to ensure that text labels dont overalp on graphs
 
-### Load in Specific Packages
+###  Load in Specific Packages
 ```{r Load Libraries}
 suppressWarnings({
 library(readr)
@@ -52,7 +53,7 @@ library(ggrepel)
 Once all the relevant libraries are loaded in, the data is read in from a local directory and saved into a dataframe. In this case 
 the dataframe that will be used for all data manipulation of the entire cancer registry data will be named *cancerReg* 
 
-### Load in the data 
+###  Load in the data 
 ```{r Read in the Data}
 # Load in data
 cancerReg <- read.csv("C:\\Users\\romin\\ToyRepo\\Models\\cancerReg.csv")
@@ -82,7 +83,7 @@ in which their age distribution is significantly higher towards an elderly popul
 against more urban health boards such as NHS Greater Glasgow and Clyde and NHS Grampian. The biggest gap in age different is between Glasgow City and Dumfries and Galloway 
 with a 14% to 27% difference respectively. Hence the importance of standardising the numerator value across the health boards, into a variable such as the measure column. 
 
-### Remove Uncessary Data for Analysis
+###  Remove Uncessary Data for Analysis
 ```{r Remove Columns}
 cancerReg <- cancerReg %>% select(
     -period, -area_type, -type_definition, -indicator,
@@ -90,7 +91,7 @@ cancerReg <- cancerReg %>% select(
 )
 ```
 
-## Visual Representation of All Values in Cancer Registry Data
+## 2.2 Visual Representation of All Values in Cancer Registry Data
 To understand how to best analyse the data, we first require an understanding of what the data represents. Each health board every year submitted a raw value in
 the form of the numerator and the measure was then calculated against an age-sex standardisation method. After the data was adjusted, the differences in measure values 
 among health boards were minimal, therefore there was a large amount of health boards falling into the same value.This caused a major issue with overplotting 
@@ -127,7 +128,7 @@ quantify how a health board's cancer registry data differs from the overall aver
 calculated against an individual health board. In calculating this, we can numerically evaluate how the values have changed. 
 While also investigating if a particular year showed an increase/decrease of patients in the cancer registry. 
 
-## Calculate Overall and Moving Average for All Health Boards
+## 2.3 Calculate Overall and Moving Average for All Health Boards
 
 ### Find Average of All Measures by Year
 ```{r Average of All HealthBoards}
@@ -219,7 +220,7 @@ between the cumulative moving average and the overall average. The difference pr
 in the cancer registry, against the national average. Providing a clear indicator of trends over time, to see if the pandemic attributed to a change in cancer registry data, or 
 if there was already a pattern of change before the pandemic.
 
-## Quantify Differences Between the Averages
+## 2.4 Quantify Differences Between the Averages
 
 ### Calculate Differences Function
 ```{r Calculate Current Point Against Moving Average}
@@ -301,7 +302,7 @@ sigPercentWide <- sigPercentWide %>% replace(is.na(.), 0)
 sigPercentTotal <- sigPercentWide %>%
     bind_rows(summarise(
         ., across(where(is.numeric), sum),
-        across(where(is.character), ~"Total")
+        across(where(is.character), ~"Total Percentage Change")
     ))
 
 kable(sigPercentTotal, format = "latex", booktabs = TRUE, longtable = TRUE) %>%
@@ -314,16 +315,64 @@ kable(sigPercentTotal, format = "latex", booktabs = TRUE, longtable = TRUE) %>%
 
 ``` 
 
+
+
+## Results
+
 In line with the previous graph of the data points, we see that the drop in the graph was between 2019 and 2020. During those time periods 9/14 health boards saw a decrease in 
 the overall number of patients in their respective cancer registries. It’s important to note at this point that the data collected come from 3-year aggregates. Any data provided from 
 a specific year also includes data from the previous years. Therefore, the 2019 data is part of a 3-year aggregate containig data from 2018-2020. This form of collecting data as an aggregate 
 was unclear. In the definition and dictionary of the data provided on the PHS website, it states that to accurately represent the true value of a year’s cancer registry data they require the next 
 years data. This purpose was unclear. In light of this information, we can assume that the data from 2019 and 2020 come from a time during the pandemic and further analyse what the 
-percentage changes mean for each of the health boards. 
+percentage changes mean for each of the health boards. The standardisation method was unorthodox as they standardised the levels agasint population data against population values from the 
+Scottish census in 2011. This paticular year for selection was unclear and may alter the standersied rates greatly, especially for smaller populations such as NHS Shetland that had major fluctations
+throughout the years.
 
 The pandemic showed a clear change amongst all health boards, in addition to another year of interest in 2016 that say a total of 20% cut in cancer registry data. 2016 was a notable year 
-for Scotlands economy and caused a shift in Scotlands work force, this change will be further discussed in the Results section.
+for Scotland's economy and caused a shift in Scotland's work force and overall expenditure, meaning budget cuts across all goverment sectors. 
 
 There seems to be a consistent number of health boards that contribute to these changes, especially NHS Western Isles, NHS Orkney and NHS Shetland. These 
 health boards experienced a deviation almost every year, this doesn’t necessarily indicate a worsening state, as lower cancer rates will also be flagged as a change from the normal. If a 
 specific health board continuously has changes from the average in a negative direction it could indicate a healthier population.  
+
+The table above shows us that there was a decrease in the number of patients registered in the cancer registry across most health boards. The years between 2003 and 2004 
+were omitted due to there being no notable percentage difference between the years. NHS Greater Glasgow & Clyde showed no changes over the years, consistently 
+maintaining high registration values. NHS Greater Glasgow & Clyde consistently topped the other health boards in the 
+recordings of cancer registry data but experienced little fluctuations up until 2019-2020. A reason for this could be worse health behaviours, such as a high prevalence of smokers, 
+high consumption of alcohol, increased rates of obesity. To determine the high cancer rates, we would have to incorporate another data set such as the Systematic Anti-Cancer Therapy Activity (ref), 
+detailing the most prevalent types of cancers in specific health boards. 
+
+## Conclusion 
+
+Not being able to detail the specific cancers introduces a limitation of the registry. Since the cancer registry data contains both incidence and prevalence rates of cancer 
+patients in each of the boards, we cannot conclude if it was due to less screening protocols or if the criteria for being considered in remission was relaxed, thereby easing the strain of 
+cancer care protocols to meet the increasing demand for intensive care provided to COVID patients. These findings provide a preliminary result of there being a noteworthy drop in the number of 
+patients in the cancer registry. This could put extreme strain on health boards as the years progress and they struggle to tackle the new wave of cancer patients that were under-reported during 
+the pandemic.
+
+Addressing the decline in cancer registry data is crucial for ensuring that health boards are well equipped with dealing with the influx of cancer patients, who were unable 
+to be treated or diagnosed during the pandemic. The longer the wait, the more aggressive the cancers will become, creating greater strain on limited resources and budget allocation. Effective policy action 
+and management directly addressing the causes of the decline would aid in decreasing this burden, through the means of increased screening programs, public health prevention measures
+or additional funding into cancer care/treatment from health board directors and managers. 
+
+
+## Further Work
+The results indicate a cause for further investigation as to the leading causes of decline in the registry. This could be in the form of increasing the amount of data associated with the
+original data such as the supplementation of the Systematic Anti-Cancer Therapy activity database that details the patients and the specific type of cancers they had, including how long they 
+needed to remain in treatment for. This could be coupled with expenditure data on the annual allocated budget each health board was provided, through the Annual Report and Consolidated Accounts submitted by each Scottish health board. 
+The reports will indicate the current financial strain placed on an increase in cancer patients (Scottish cancer cases rise by 15% after pandemic drop. (2023), BBC News) and where their budgets 
+are currently falling short causing the lack of targeted resource allocation to address the increased number of cases. Overall, this case is complex and requires a multitude of additional
+datasets to be analysed to provide clearer steps and instructions to policy makers and health board directors to make the correct decisions on funding and allocation, however, this issue 
+needs to be addressed with urgency to provide health care to patients that were lost during the pandemic.
+
+## Summary
+
+In summary
+
+## References
+NHSGGC. (2024). Annual Report and Consolidated Accounts 2019-2020. [online] Available at: https://www.nhsggc.scot/downloads/annual-report-and-consolidated-accounts-2019-2020/ [Accessed 1 Dec. 2024].
+Nrscotland.gov.uk. (2023). Scotland’s Population 2023. [online] Available at: https://www.nrscotland.gov.uk/files//statistics/rgar/2023/scotlands-population-2023.html [Accessed 1 Dec. 2024].
+Scottish cancer cases rise by 15% after pandemic drop. (2023). BBC News. [online] 28 Mar. Available at: https://www.bbc.com/news/uk-scotland-65088331.
+Scotland, P.H. (2024). Dashboard - Systemic Anti-Cancer Therapy activity 3 October 2024 - Systemic anti-cancer therapy (SACT) activity - Publications - Public Health Scotland. [online] Publichealthscotland.scot. Available at: https://publichealthscotland.scot/publications/systemic-anti-cancer-therapy-sact-activity/systemic-anti-cancer-therapy-activity-3-october-2024/dashboard/ [Accessed 1 Dec. 2024].
+
+‌
