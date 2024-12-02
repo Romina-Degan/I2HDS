@@ -50,11 +50,11 @@ to aid in policy decisions and finance/resource allocations, by targeting the pa
 
 
 # Methods
-## Data Acquisition
+## 2.1 Data Acquisition
 The cancer registry data is available in the Public Health Scotland website as a downloadable Excel spreadsheet. This data contains a raw numerator value for each 
 health board in a specific time, and a standardised value with a specific method used to standardise across the health boards.
 
-## 2.1 Data Loading/Cleansing
+## 2.2 Data Loading/Cleansing
 First the relevant library packages are installed, there are some typical boilerplate packages. Of note to this report, are the packages:
 
 - Lemon - provides functionalities for geom_pointline
@@ -101,8 +101,8 @@ These values have been removed to make the data cleaner and easier to manipulate
 raw value of the amount of people registered under that specific health board in the cancer registry. This value could not be used as a reliable indicator of  
 the rate of patients in the cancer registry by a specific health board, due to its lack of standardisation.
 
-Standardisation is essential when looking at larger population data, especially with an aging population such as Scotland's. Certain disease such as cancers
-are more prevalent in an aging population as seen with (insert reference). This is a significant factor in this study as Scotland is made up of several rural areas,
+Standardisation is essential when looking at larger population data, especially with an aging population such as Scotland's. Certain diseases such as cancers
+are more prevalent in an aging population as seen with (Nrscotland.gov.uk. (2023)). This is a significant factor in this study as Scotland is made up of several rural areas,
 in which their age distribution is significantly higher towards an elderly population. Specifically, between the more rural health boards such as NHS Orkney, NHS Ayrshire compares 
 against more urban health boards such as NHS Greater Glasgow and Clyde and NHS Grampian. The biggest gap in age difference was between Glasgow City and Dumfries and Galloway 
 with a 14% to 27% difference respectively. Hence the importance of standardising the numerator value across the health boards, into a variable such as the measure column. 
@@ -115,16 +115,16 @@ cancerReg <- cancerReg %>% select(
 )
 ```
 
-## 2.2 Visual Representation of All Values in Cancer Registry Data
+## 2.3 Visual Representation of All Values in Cancer Registry Data
 To understand how to best analyse the data, we first require an understanding of what the data represents. Each health board every year submitted a raw value in
 the form of the numerator and the measure was then calculated against an age-sex standardisation method. After the data was adjusted, the differences in measure values 
-among health boards were minimal, therefore there was a large amount of health boards falling into the same value.This caused a major issue with overplotting 
+among health boards were minimal, therefore there was a large amount of health boards falling into the same value. This caused a major issue with overplotting 
 across different health boards. To try and overcome the issue of overplotting, a variety of visual graphs were tested. Such as density plots, heatmaps and stacked area charts, 
 but they all proved too limited in showing the drastic jumps some health boards exhibited in certain time frames.
 
 This portion of the assignment took the longest due to the difficulty of clearly mapping all 14 health boards over an extended period. 
 Especially when there are such drastic changes in the measure, often these sharp changes in the measure value were lost in favour of generalising the data.
-Therefore, the decision was made to use a scatter and line plot with varying functions designed to smoothen the lines between certain points where they seemingly overlap consistently. 
+Therefore, the decision was made to use a scatter and line plot with varying functions designed to smooth the lines between certain points where they seemingly overlap consistently. 
 
 ### Display All Data Points
 ```{r Graph Of Cancer Reg Data, fig.height = 20, fig.width = 25}
@@ -157,7 +157,7 @@ quantify how a health board's cancer registry data differs from the overall aver
 calculated against an individual health board. In calculating this, we can numerically evaluate how the values have changed. 
 While also investigating if a particular year showed an increase/decrease of patients in the cancer registry. 
 
-## 2.3 Calculate Overall and Moving Average for All Health Boards
+## 2.4 Calculate Overall and Moving Average for All Health Boards
 
 ### Find Average of All Measures by Year
 ```{r Average of All HealthBoards}
@@ -175,9 +175,9 @@ While most moving average models place emphasis and weightings on more recent da
 most historical data and provides the means of examining long term trends for patients within the cancer registry.
 
 For the purposes of this report, we aim to explore fluctuations in registry data over the years, particularly
-how the pandemic has impacted the cancer registry. We are interested in observing the increase/decrease in 
+how the pandemic has impacted the cancer registry. We are interested in observing the increase or decrease in 
 cancer trends to then explore if the pandemic did cause an effect on registry data, or if there were underlying trends
-in previous years that have exacerbated the status quo. Therefore, the decision was made to use the cumulative average, to maintain 
+in previous years that coincided with the pandemic. Therefore, the decision was made to use the cumulative average, to maintain 
 the weighting that historical data would have on the overall value, so that a clearer distinction could be made on each year’s trend in cancer registry data. 
 
 
@@ -211,6 +211,7 @@ finalValues <- movingAvg %>%
     ggplot(data = cancerReg, aes(x = year)) +
         geom_pointline(data = avgYearly, aes(y = AvgYear)) +
         geom_line(data = movingAvg, aes(y = MA, col = area_name)) +
+        #Ensure that the health board labels do not overalp
         geom_text_repel(
             data = finalValues, aes(
                 x = lastYear,
@@ -239,13 +240,13 @@ remained within the overall average, most of these are contained within the midd
 in the measure value over time. Specifically, NHS Western Isles, NHS Orkney and NHS Shetland. These health boards consistently have shown varying levels
 of fluctuation over the years. Without using the cumulative summation to calculate these averages, their historical data would have been lost. 
 
-The moving average itself saw a slight uptick in cases during 2006-2008 and the cases yo-yoed up and down for the next 7 years until there was a sharp decline. 
-This decline shows that during 2019, across all health boards the measure of patients in the cancer registry fell. To quantify this value we can calculate, the differences 
+The moving average itself saw a slight uptick in cases during 2006-2008 and the cases fluctuated for the next 7 years until there was a sharp decline. 
+This decline shows that during 2019, across all health boards the measure of patients in the cancer registry fell. To quantify this value we can calculate the differences 
 between the cumulative moving average and the overall average. The difference provided would show the rise (positive difference) or fall (negative difference) in patients
 in the cancer registry, against the national average. Providing a clear indicator of trends over time, to see if the pandemic attributed to a change in cancer registry data, or 
 if there was already a pattern of change before the pandemic.
 
-## 2.4 Quantify Differences Between the Averages
+## 2.5 Quantify Differences Between the Averages
 
 ### Calculate Differences Function
 ```{r Calculate Current Point Against Moving Average}
@@ -257,8 +258,9 @@ if there was already a pattern of change before the pandemic.
         stringsAsFactors = FALSE
     )
     boardAvg <- function(currBoard, currVal, currYear) {
-        #Retrive current average for a specific year 
-        currAvgYear <- filter(movingAvg, area_name == currBoard & year == currYear) %>% select(MA)
+        # Retrive current average for a specific year
+        currAvgYear <- filter(movingAvg, area_name == currBoard & year == currYear) %>%
+            select(MA)
         numCurrAvgYear <- gsub("[^0-9.]", "", currAvgYear$MA)
         numCurrAvgYear <- as.numeric(numCurrAvgYear)
         #Calculate difference
@@ -312,7 +314,7 @@ encountered a change of at least 3% of the overall average was saved into anothe
 
 ``` 
 
-##Disp
+### Display Table of Percentage Changes  
 
 ```{r Create Table of Results}
 
@@ -330,7 +332,8 @@ sigPercentTotal <- sigPercentWide %>%
         across(where(is.character), ~"Total Percentage Change (%)")
     ))
 
-kable(sigPercentTotal, format = "latex", booktabs = TRUE, longtable = TRUE, caption="Rate of Change as Percentage from Moving Average to Overall Average ") %>%
+kable(sigPercentTotal, format = "latex", booktabs = TRUE, longtable = TRUE, 
+    caption="Rate of Change as Percentage from Moving Average to Overall Average ") %>%
     kable_styling(latex_options = c("striped", "hold_position")) %>%
     row_spec(0, bold = TRUE) %>%
     column_spec(1, "2cm") %>%
@@ -383,7 +386,9 @@ or additional funding into cancer care/treatment from health board directors and
 # Further Work
 The results indicate a cause for further investigation as to the leading causes of decline in the registry. This could be in the form of increasing the amount of data associated with the
 original data such as the supplementation of the Systematic Anti-Cancer Therapy activity database that details the patients and the specific type of cancers they had, including how long they 
-needed to remain in treatment for. This could be coupled with expenditure data on the annual allocated budget each health board was provided, through the Annual Report and Consolidated Accounts submitted by each Scottish health board. 
+needed to remain in treatment for.
+
+This could be coupled with expenditure data on the annual allocated budget each health board was provided, through the Annual Report and Consolidated Accounts submitted by each Scottish health board. 
 The reports will indicate the current financial strain placed on an increase in cancer patients (Scottish cancer cases rise by 15% after pandemic drop. (2023), BBC News) and where their budgets 
 are currently falling short causing the lack of targeted resource allocation to address the increased number of cases. Overall, this case is complex and requires a multitude of additional
 datasets to be analysed to provide clearer steps and instructions to policy makers and health board directors to make the correct decisions on funding and allocation, however, this issue 
@@ -393,7 +398,9 @@ needs to be addressed with urgency to provide health care to patients that were 
 
 Overall, this report has created a means of quantifying and visualising the effects that the pandemic had on the overall trend of cancer registry data in Scotland using the Scot PHO 
 health profile data. By analysing this data, we can provide specific health board directors and policy makers a clear indication as to which health boards have been impacted the most 
-by the temporary cessation of screening programmes. The findings of this report used the standardised values created by Scot PHO as a measure of the current rate of cancer patients registered in a 
+by the temporary cessation of screening programmes (Campbell, C., (2019)). 
+
+The findings of this report used the standardised values created by Scot PHO as a measure of the current rate of cancer patients registered in a 
 specific health board in a specific time. The measure was used with a cumulative moving average across the years to calculate the individual averages of specific health boards and this 
 was compared against an overall average for all health boards incrementally by year. The difference between the total and individual average showed if there was a change for that 
 specific health board, a negative value indicates a decrease in the number of patients in the cancer registry and a positive value indicates an increase. These changes were graphically displayed 
@@ -405,14 +412,13 @@ it is known that they used population data from 2011 for all data points which c
 
 A large limiting factor of this study is the lack of clarity as to why the registry has fallen in amounts before the pandemic. We cannot say for certain that a drop in cancer rates is indicative of less 
 public health interventions or failed screening programs as a population may have even become healthier because of targeted interventions. To enhance the prominence of this data, incorporating 
-different data sets such as the Systematic Anti-Cancer Therapy Activity showing success rates of treatments to better guide policy makers and health board 
+different data sets such as the Systematic Anti-Cancer Therapy Activity (Scotland, P.H. (2024)) showing success rates of treatments to better guide policy makers and health board 
 directors as to which interventions and resource allocation methods have showed continued growth in decreasing the cancer burden. Aside from the limitations, there is a clear pressing issue 
 of many patients missed during the pandemic, with such a backlog of patients, it will become a pressing weight on a strained health care system if not addressed by policy makers and health 
 board directors through the means of increased interventions to offset the programmes hindered during the pandemic.
 
 
-
-Summary Word Count : 479
+Summary Word Count : 472
 
 ## References
 [1]. NHSGGC. (2024). Annual Report and Consolidated Accounts 2019-2020. [online] Available at: https://www.nhsggc.scot/downloads/annual-report-and-consolidated-accounts-2019-2020/ [Accessed 1 Dec. 2024].
