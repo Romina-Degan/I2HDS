@@ -14,13 +14,13 @@ knitr::opts_chunk$set(echo = TRUE, message=FALSE, warning=FALSE)
 \newpage
 # Introduction
 ## 1.1 Background
-Understanding trends in a country's cancer registry data provided an essential understanding for health budget allocation and informed public health policies,
-targeted at reducing the incidence of certain cancers. Cancer diagnoses place significant strain on not only a patient’s life, but on the healthcare budget allocated. 
+Understanding trends in a country's cancer registry data provides an essential understanding for health budget allocation and informed public health policies,
+targeted at reducing the incidence of cancer. Cancer diagnoses place significant strain on not only a patient’s life, but on the healthcare budget allocated. 
 This form of stress on an economy’s healthcare budget is known as the cancer burden. The larger the cancer burden the harder the economy must work to meet the growing 
-demands placed on the healthcare system to provide the patients with the intensive care required. 
+demands placed on the healthcare system to provide the patients with the intensive care required.(Cancer Atlas, (2018))
 
-To illustrate this problem we can examine how Europe currently has the highest health expenditure
-on cancer treatment also has the highest rate of deaths in a working age (30-69) due to cancer. Despite increased funding, quality healthcare and developing research into improving 
+To illustrate this problem we can examine how Europe currently has the highest health expenditure (€ 199 billion)
+on cancer treatment also has the highest rate of deaths in a working age (30-69) due to cancer(Thomas Hofmarcher, (2020)). Despite increased funding, quality healthcare and developing research into improving 
 cancer care, providing the correct care in a timely manner that ensures cancer is caught earlier to prevent increased costs on a healthcare system still proves an issue. This is 
 where maintaining and updating health statistics is important to inform policy makers and health board directors on the changing needs amid rising cases. 
 
@@ -123,7 +123,7 @@ across different health boards. To try and overcome the issue of overplotting, a
 but they all proved too limited in showing the drastic jumps some health boards exhibited in certain time frames.
 
 This portion of the assignment took the longest due to the difficulty of clearly mapping all 14 health boards over an extended period. 
-Especially when there are such drastic changes in the measure, often these sharp changes in the measure value were lost in favour of generalising the data.
+Especially when there are such drastic changes in the measure, often these sharp changes in the measure value were lost in favour of generalising the data in many visualisation methods.
 Therefore, the decision was made to use a scatter and line plot with varying functions designed to smooth the lines between certain points where they seemingly overlap consistently. 
 
 ### Display All Data Points
@@ -234,7 +234,7 @@ finalValues <- movingAvg %>%
 
 ```
 
-The overall average is calculated and plotted as a scatter plot over a line plot of the individual health board averages. The lines that were previously plotted
+The overall average is calculated and plotted as a scatter plot denoted in black, over a line plot of the individual health board averages. The lines that were previously plotted
 on the overview of the data have been smoothed to show the uptick in trends over time. Notably, there are few health boards that have consistently 
 remained within the overall average, most of these are contained within the middle of the labels. As the labels of the graph move further out, we see stronger variations
 in the measure value over time. Specifically, NHS Western Isles, NHS Orkney and NHS Shetland. These health boards consistently have shown varying levels
@@ -295,7 +295,7 @@ encountered a change of at least 3% of the overall average was saved into anothe
 
 ### Calculate Differences
 ```{r Calculate Differences from Current Point to Moving Average}
-
+    #Retrive measure values over the years by different healthboards
     healthBoards <- unique(cancerReg$area_name)
     totalYears <- unique(cancerReg$year)
     for (currBoard in healthBoards) {
@@ -333,7 +333,7 @@ sigPercentTotal <- sigPercentWide %>%
     ))
 
 kable(sigPercentTotal, format = "latex", booktabs = TRUE, longtable = TRUE, 
-    caption="Rate of Change as Percentage from Moving Average to Overall Average ") %>%
+    caption="Rate of Change within an Individual Health Board Against its Moving Average") %>%
     kable_styling(latex_options = c("striped", "hold_position")) %>%
     row_spec(0, bold = TRUE) %>%
     column_spec(1, "2cm") %>%
@@ -420,7 +420,9 @@ board directors through the means of increased interventions to offset the progr
 
 Summary Word Count : 472
 
-## References
+
+
+### References
 [1]. NHSGGC. (2024). Annual Report and Consolidated Accounts 2019-2020. [online] Available at: https://www.nhsggc.scot/downloads/annual-report-and-consolidated-accounts-2019-2020/ [Accessed 1 Dec. 2024].
 
 [2]. Nrscotland.gov.uk. (2023). Scotland’s Population 2023. [online] Available at: https://www.nrscotland.gov.uk/files//statistics/rgar/2023/scotlands-population-2023.html [Accessed 1 Dec. 2024].
@@ -434,5 +436,9 @@ Summary Word Count : 472
 [6]. Yancik, R., 2005. Population aging and cancer: a cross-national concern. The Cancer Journal, 11(6), pp.437-441.
 
 [7]. Scottish Public Health Observatory (2021). ScotPHO profiles. [online] Shinyapps.io. Available at: https://scotland.shinyapps.io/ScotPHO_profiles_tool/.
+
+[8]. Thomas Hofmarcher et al. “The cost of cancer in Europe 2018”. In: European Journal of Cancer 129 (2020), pp. 41–49.
+
+[9]. CancerAtlas. The Burden of Cancer — canceratlas.cancer.org. https://canceratlas.cancer.org/the-burden/the-burden-of-cancer/. [Accessed 21-10-2024].
 
 
